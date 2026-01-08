@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+body {
+  background-image: url("./assets//images/nature.png");
+  background-color: #1B7A43E3;
+}
