@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 body {
-  background-image: url("./assets//images/nature.png");
+  background-image: url("../public/Dala.png");
+  background-size: 1920px;
+  background-repeat: no-repeat;
   background-color: #1B7A43E3;
 }
