@@ -32,9 +32,54 @@ const Navbar = () => {
     after:duration-300
     hover:after:w-full
     hover:after:left-0" to="/">Home</Link>
-          <Link className="hover:text-[#00cc69]" to="/product">Product</Link>
-          <Link className="hover:text-[#00cc69]" to="/services">Services</Link>
-          <Link className="hover:text-[#00cc69]" to="/blog">About</Link>
+          <Link className="hover:text-[#00cc69] relative
+    inline-block
+    text-black
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:bg-gradient-to-r
+    after:from-[#00cc69]
+    after:to-[#00cc69]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+    hover:after:left-0" to="/product">Product</Link>
+          <Link className="hover:text-[#00cc69] relative
+    inline-block
+    text-black
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:bg-gradient-to-r
+    after:from-[#00cc69]
+    after:to-[#00cc69]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+    hover:after:left-0" to="/services">Services</Link>
+          <Link className="hover:text-[#00cc69] relative
+    inline-block
+    text-black
+    after:content-['']
+    after:absolute
+    after:left-1/2
+    after:-bottom-1
+    after:h-[2px]
+    after:w-0
+    after:bg-gradient-to-r
+    after:from-[#00cc69]
+    after:to-[#00cc69]
+    after:transition-all
+    after:duration-300
+    hover:after:w-full
+    hover:after:left-0" to="/blog">About</Link>
         </nav>
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-5">
