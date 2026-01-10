@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 body {
-  background-image: url("../public/Dala.png");
+  /* background-image: url("../public/dala.webp"); */
   background-size: 1920px;
   background-repeat: no-repeat;
-  background-color: #1B7A43E3;
+  /* background: linear-gradient(to right, #DCE35B, #45B649); */
+  background: linear-gradient(to right, #56ab2f, #a8e063);
 }
