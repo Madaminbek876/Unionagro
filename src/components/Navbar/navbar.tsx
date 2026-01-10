@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div className="mx-auto max-w-[1440px] h-[60px] mt-3 bg-[#FFFFFF19] shadow-sm border-black border px-5  rounded-lg">
       <div className="flex items-center">
-        <img width="80" height="80" src={Logo} alt="" />
+        <img width="80" height="80" src={Logo} alt="sasaasa" />
         <div className="flex items-center gap-1 ml-30">
           <div className="w-[40px] h-[40px] rounded-full bg-[#FFFFFF19] p-2">
             <img width="35" height="35" src={TG} alt="" />
