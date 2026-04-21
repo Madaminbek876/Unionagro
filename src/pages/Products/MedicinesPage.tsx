@@ -1,42 +1,40 @@
-import WatermelonField from "@/assets/images/article-watermelon-field.jpg";
-import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
-import TomatoClose from "@/assets/images/article-tomato-close.jpg";
-import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
-import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
+import Product from "@/assets/images/product.png";
+import Seda from "@/assets/images/seda.png";
+import Sedana from "@/assets/images/sedana.png";
 import Navbar from "@/components/Navbar/navbar";
-import { ArrowLeft, Sprout } from "lucide-react";
+import { ArrowLeft, Beaker } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const seeds = [
+const medicines = [
   {
-    name: "Labela F1",
-    image: WatermelonField,
-    text: "Erta pishar tarvuz navi. Yirik meva, kuchli ildiz va yaxshi tashishga chidamlilik bilan ajralib turadi.",
+    name: "Bio Magic",
+    image: Product,
+    text: "O'simlik o'sishini qo'llab-quvvatlaydigan kompleks oziqlantirish vositasi.",
   },
   {
-    name: "Cherry TT-10 F1",
-    image: TomatoCherry,
-    text: "Issiqxona uchun serhosil cherry pomidor. Bir tekis shoda, yorqin rang va bozorbop ko'rinish beradi.",
+    name: "Root Max",
+    image: Sedana,
+    text: "Ildiz rivojlanishini kuchaytiradi va ko'chatning moslashish davrini yengillashtiradi.",
   },
   {
-    name: "Aisha F1",
-    image: TomatoClose,
-    text: "Pomidor navi kuchli o'sadi, kasallikka chidamliligi yaxshi va uzoq hosil davriga mos.",
+    name: "Green Shield",
+    image: Seda,
+    text: "Barg va poya himoyasi uchun profilaktik agro yechim sifatida tavsiya etiladi.",
   },
   {
-    name: "Laser F1",
-    image: LaserF1Cucumber,
-    text: "Bodring urug'i issiqxona va ochiq maydon uchun mos. Mevasi silliq, hosildorligi barqaror.",
+    name: "Fito Energy",
+    image: Product,
+    text: "Vegetatsiya vaqtida o'simlikka quvvat berib, hosil sifatini yaxshilashga yordam beradi.",
   },
   {
-    name: "Zumra F1",
-    image: ZumraF1Melon,
-    text: "Qovun urug'i shirin ta'm, zich et va bir xil meva shakli uchun tanlanadi.",
+    name: "Agro Balance",
+    image: Sedana,
+    text: "Stressdan keyingi tiklanish va oziqa balansini ushlab turish uchun ishlatiladi.",
   },
 ];
 
-const ProductsPage = () => {
+const MedicinesPage = () => {
   const [flippedCard, setFlippedCard] = useState<string | null>(null);
 
   return (
@@ -55,19 +53,21 @@ const ProductsPage = () => {
           </Link>
 
           <h1 className="text-center text-4xl font-black tracking-wide text-white sm:text-5xl">
-            Urug'lar
+            Dorilar
           </h1>
 
           <div className="mt-16 grid gap-x-20 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-            {seeds.map((seed) => (
+            {medicines.map((medicine) => (
               <FlipCatalogCard
-                key={seed.name}
-                name={seed.name}
-                image={seed.image}
-                text={seed.text}
-                flipped={flippedCard === seed.name}
+                key={medicine.name}
+                name={medicine.name}
+                image={medicine.image}
+                text={medicine.text}
+                flipped={flippedCard === medicine.name}
                 onClick={() =>
-                  setFlippedCard(flippedCard === seed.name ? null : seed.name)
+                  setFlippedCard(
+                    flippedCard === medicine.name ? null : medicine.name,
+                  )
                 }
               />
             ))}
@@ -98,19 +98,22 @@ const FlipCatalogCard = ({
     onClick={onClick}
     className="mx-auto block w-full max-w-[260px] text-center outline-none [perspective:1100px]"
   >
-    <div className="h-[340px] transition duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)] data-[flipped=true]:[transform:rotateY(180deg)]" data-flipped={flipped}>
+    <div
+      className="h-[250px] transition duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)] data-[flipped=true]:[transform:rotateY(180deg)]"
+      data-flipped={flipped}
+    >
       <div className="absolute inset-0 [backface-visibility:hidden]">
-        <div className="h-[268px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)]">
+        <div className="h-[178px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)]">
           <img src={image} alt={name} className="h-full w-full object-cover" />
         </div>
-        <h2 className="mx-auto mt-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow">
+        <h2 className="mt-4 text-xl font-black text-[#FBC719] drop-shadow">
           {name}
         </h2>
       </div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center rounded-[18px] border-2 border-[#FBC719] bg-[#196931] p-5 text-white shadow-[0_20px_48px_rgba(0,0,0,0.34)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
         <div className="mb-3 grid h-11 w-11 place-items-center rounded-2xl border border-[#FBC719] bg-[#FBC719]/15 text-[#FBC719]">
-          <Sprout size={24} />
+          <Beaker size={24} />
         </div>
         <h3 className="text-xl font-black text-[#FBC719]">{name}</h3>
         <p className="mt-3 text-sm font-semibold leading-6 text-white/82">
@@ -121,4 +124,4 @@ const FlipCatalogCard = ({
   </button>
 );
 
-export default ProductsPage;
+export default MedicinesPage;
