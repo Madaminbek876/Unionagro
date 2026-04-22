@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer";
 import Fabio from "@/assets/images/8da9ce091b880623eea47f85f6d2e3f2911fa325.png";
 import SeedsMix from "@/assets/images/blob.jpeg";
-import FieldCarouselOne from "@/assets/images/field-carousel-1.jpg";
+import FieldCarouselOne from "@/assets/images/watermelon-field-man.jpg";
 import FieldCarouselTwo from "@/assets/images/field-carousel-2.jpg";
 import ArticleMelonChild from "@/assets/images/article-melon-child.jpg";
 import ArticleWatermelonField from "@/assets/images/article-watermelon-field.jpg";
