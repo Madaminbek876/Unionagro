@@ -1,44 +1,9 @@
-import WatermelonField from "@/assets/images/article-watermelon-field.jpg";
-import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
-import TomatoClose from "@/assets/images/article-tomato-close.jpg";
-import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
-import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
 import Navbar from "@/components/Navbar/navbar";
-import { ArrowLeft, Sprout } from "lucide-react";
-import { useState } from "react";
+import { seedProducts } from "@/data/catalog";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const seeds = [
-  {
-    name: "Labela F1",
-    image: WatermelonField,
-    text: "Erta pishar tarvuz navi. Yirik meva, kuchli ildiz va yaxshi tashishga chidamlilik bilan ajralib turadi.",
-  },
-  {
-    name: "Cherry TT-10 F1",
-    image: TomatoCherry,
-    text: "Issiqxona uchun serhosil cherry pomidor. Bir tekis shoda, yorqin rang va bozorbop ko'rinish beradi.",
-  },
-  {
-    name: "Aisha F1",
-    image: TomatoClose,
-    text: "Pomidor navi kuchli o'sadi, kasallikka chidamliligi yaxshi va uzoq hosil davriga mos.",
-  },
-  {
-    name: "Laser F1",
-    image: LaserF1Cucumber,
-    text: "Bodring urug'i issiqxona va ochiq maydon uchun mos. Mevasi silliq, hosildorligi barqaror.",
-  },
-  {
-    name: "Zumra F1",
-    image: ZumraF1Melon,
-    text: "Qovun urug'i shirin ta'm, zich et va bir xil meva shakli uchun tanlanadi.",
-  },
-];
-
 const ProductsPage = () => {
-  const [flippedCard, setFlippedCard] = useState<string | null>(null);
-
   return (
     <main className="min-h-screen bg-[#0f321b] text-white">
       <div className="fixed inset-0 bg-[url('/dala.webp')] bg-cover bg-center" />
@@ -59,16 +24,12 @@ const ProductsPage = () => {
           </h1>
 
           <div className="mt-16 grid gap-x-20 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-            {seeds.map((seed) => (
-              <FlipCatalogCard
+            {seedProducts.map((seed) => (
+              <CatalogCard
+                slug={seed.slug}
                 key={seed.name}
                 name={seed.name}
                 image={seed.image}
-                text={seed.text}
-                flipped={flippedCard === seed.name}
-                onClick={() =>
-                  setFlippedCard(flippedCard === seed.name ? null : seed.name)
-                }
               />
             ))}
           </div>
@@ -79,46 +40,33 @@ const ProductsPage = () => {
 };
 
 type FlipCatalogCardProps = {
+  slug: string;
   name: string;
   image: string;
-  text: string;
-  flipped: boolean;
-  onClick: () => void;
 };
 
-const FlipCatalogCard = ({
+const CatalogCard = ({
+  slug,
   name,
   image,
-  text,
-  flipped,
-  onClick,
 }: FlipCatalogCardProps) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className="mx-auto block w-full max-w-[260px] text-center outline-none [perspective:1100px]"
+  <Link
+    to={`/product/${slug}`}
+    className="group mx-auto block w-full max-w-[260px] text-center outline-none"
   >
-    <div className="h-[340px] transition duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)] data-[flipped=true]:[transform:rotateY(180deg)]" data-flipped={flipped}>
-      <div className="absolute inset-0 [backface-visibility:hidden]">
-        <div className="h-[268px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)]">
-          <img src={image} alt={name} className="h-full w-full object-cover" />
-        </div>
-        <h2 className="mx-auto mt-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow">
-          {name}
-        </h2>
+    <div className="transition duration-500 group-hover:-translate-y-2">
+      <div className="h-[268px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)]">
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+        />
       </div>
-
-      <div className="absolute inset-0 flex flex-col items-center justify-center rounded-[18px] border-2 border-[#FBC719] bg-[#196931] p-5 text-white shadow-[0_20px_48px_rgba(0,0,0,0.34)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-        <div className="mb-3 grid h-11 w-11 place-items-center rounded-2xl border border-[#FBC719] bg-[#FBC719]/15 text-[#FBC719]">
-          <Sprout size={24} />
-        </div>
-        <h3 className="text-xl font-black text-[#FBC719]">{name}</h3>
-        <p className="mt-3 text-sm font-semibold leading-6 text-white/82">
-          {text}
-        </p>
-      </div>
+      <h2 className="mx-auto mt-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
+        {name}
+      </h2>
     </div>
-  </button>
+  </Link>
 );
 
 export default ProductsPage;

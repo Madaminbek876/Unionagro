@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer";
-import Product from "@/assets/images/product.png";
-import Seda from "@/assets/images/seda.png";
+import Fabio from "@/assets/images/8da9ce091b880623eea47f85f6d2e3f2911fa325.png";
+import SeedsMix from "@/assets/images/blob.jpeg";
 import FieldCarouselOne from "@/assets/images/field-carousel-1.jpg";
 import FieldCarouselTwo from "@/assets/images/field-carousel-2.jpg";
 import ArticleMelonChild from "@/assets/images/article-melon-child.jpg";
@@ -244,13 +244,13 @@ const HomePage = () => {
           <div className="grid gap-5 md:grid-cols-2">
             <CategoryCard
               href="/product"
-              image={Seda}
+              image={SeedsMix}
               title="Urug'lar"
               icon={<Sprout size={24} />}
             />
             <CategoryCard
               href="/medicine"
-              image={Product}
+              image={Fabio}
               title="Dorilar"
               icon={<Beaker size={24} />}
             />

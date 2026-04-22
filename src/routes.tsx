@@ -19,7 +19,11 @@ const route = createBrowserRouter([
   },
   {
     element: <ProductDetailPage />,
-    path: "/productDetail"
+    path: "/product/:slug"
+  },
+  {
+    element: <ProductDetailPage />,
+    path: "/medicine/:slug"
   }
 ])
 
