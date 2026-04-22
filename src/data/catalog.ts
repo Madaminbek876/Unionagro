@@ -3,9 +3,11 @@ import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
 import TomatoClose from "@/assets/images/article-tomato-close.jpg";
 import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
-import Product from "@/assets/images/product.png";
-import Seda from "@/assets/images/seda.png";
 import SeedsMix from "@/assets/images/blob.jpeg";
+import NutriLeaf from "@/assets/images/nutri-leaf.png";
+import RadikaBase from "@/assets/images/radika-base.png";
+import VitalPlusCalcium from "@/assets/images/vital-plus-calcium.png";
+import ZExtra from "@/assets/images/z-extra.png";
 
 export type CatalogType = "seed" | "medicine";
 
@@ -128,83 +130,108 @@ export const seedProducts: CatalogProduct[] = [
 
 export const medicineProducts: CatalogProduct[] = [
   {
-    slug: "bio-magic",
+    slug: "vital-plus-12-calcium",
     type: "medicine",
-    name: "Bio Magic",
-    image: Product,
+    name: "VITAL plus 12% CALCIUM",
+    image: VitalPlusCalcium,
     summary:
-      "O'simlik o'sishini qo'llab-quvvatlaydigan kompleks oziqlantirish vositasi.",
+      "Tarkibida katta miqdorda kalsiy mavjud bo'lgan, sitrat va karboksil bilan birikkan suyuq o'g'it.",
     description:
-      "Bio Magic vegetatsiya davrida o'simlikning umumiy rivojlanishini qo'llab-quvvatlash uchun ishlatiladi. Barg, poya va ildiz faoliyatini balansda ushlab turishga yordam beradi.",
+      "VITAL plus 12% CALCIUM - ushbu turdagi o'g'it tarkibida katta miqdorda kalsiy mavjud bo'lib, sitrat va karboksil bilan birikkan etilendiamintetrasirka kislotasi ko'rinishiga ega. U o'simliklarda kalsiy tanqisligining oldini olib, yig'im-terim paytida mevalarning lat yeyishi, yorilishi va to'kilishiga qarshi chidamliligini oshiradi, hosilning saqlanish muddatini uzaytiradi. O'g'it tarkibida o'simliklar uchun zarur katta miqdordagi turli makro- va mikroelementlar mavjud.",
     highlights: [
-      "O'sishni faollashtiradi",
-      "Stressdan keyingi tiklanishni qo'llab-quvvatlaydi",
-      "Vegetatsiya davrida qo'llashga mos",
+      "Kalsiy tanqisligining oldini oladi",
+      "Meva yorilishi va to'kilishini kamaytiradi",
+      "Hosil saqlanish muddatini uzaytiradi",
     ],
     specs: [
-      { label: "Yo'nalish", value: "Oziqlantirish" },
-      { label: "Qo'llash", value: "Vegetatsiya" },
-      { label: "Mahsulot turi", value: "Agro vosita" },
+      { label: "Total nitrogen (N)", value: "4.0%" },
+      { label: "Water soluble potassium (K20)", value: "4.0%" },
+      { label: "Soluble Calcium (CaO)", value: "2.5%" },
+      { label: "Soluble Magnesium (Mg)", value: "0.6%" },
+      { label: "Boron (B)", value: "0.1%" },
+      { label: "Soluble Iron (Fe)", value: "0.1%" },
+      { label: "Soluble manganese (Mn)", value: "0.05%" },
+      { label: "Zinc (Zn)", value: "0.05%" },
+      { label: "MS solution (Cu)", value: "0.05%" },
+      { label: "Folic Acid", value: "1.0%" },
+      { label: "Free Amino Acid", value: "4.0%" },
+      { label: "Seaweed extract", value: "2.0%" },
     ],
   },
   {
-    slug: "root-max",
+    slug: "radika-base",
     type: "medicine",
-    name: "Root Max",
-    image: SeedsMix,
+    name: "RADIKA BASE",
+    image: RadikaBase,
     summary:
-      "Ildiz rivojlanishini kuchaytiradi va ko'chatning moslashish davrini yengillashtiradi.",
+      "O'simlik ildizlarini kattalashtirish va rivojlantirish, er va suvda pH miqdorini kamaytirish uchun samarali o'g'it.",
     description:
-      "Root Max ko'chat ildizining faol rivojlanishini qo'llab-quvvatlash uchun tavsiya qilinadi. Ko'chirishdan keyingi moslashish jarayonini yengillashtiradi.",
+      "RADIKA BASE - ushbu turdagi o'g'it o'simliklar ildizlarini kattalashtirish va rivojlantirish, er va suvda pH miqdorini kamaytirish borasida samarali. Barcha turdagi o'simliklar uchun mos. Tarkibidagi maxsus kislotalar, mikroelementlar, yuqori miqdordagi hol kislotalari ildiz gormonlari va ildiz tizimining o'zini kattalashtirib, tez rivojlantiradi. Maxsus formulasi tufayli noyob o'g'itlar sinfidan joy olgan. Tarkibida fosfor, turli xelatlangan makro- va mikroelementlar, gumin va foliy kislotalari mavjud.",
     highlights: [
-      "Ildiz tizimini qo'llab-quvvatlaydi",
-      "Ko'chat moslashuviga yordam beradi",
-      "Erta rivojlanish bosqichiga mos",
+      "Ildiz tizimini tez rivojlantiradi",
+      "Er va suvda pH miqdorini kamaytirishga yordam beradi",
+      "Fosfor, gumin va foliy kislotalariga boy",
     ],
     specs: [
-      { label: "Yo'nalish", value: "Ildiz rivoji" },
-      { label: "Qo'llash", value: "Ko'chat davri" },
-      { label: "Mahsulot turi", value: "Agro vosita" },
+      { label: "Total Nitrogen (N)", value: "5.0%" },
+      { label: "Available Phosphorous (P205)", value: "12.0%" },
+      { label: "Soluble Potassium (K20)", value: "3.0%" },
+      { label: "Iron (Fe)", value: "0.7%" },
+      { label: "Manganese (Mn)", value: "0.3%" },
+      { label: "Zinc (Zn)", value: "0.5%" },
+      { label: "Boron (B)", value: "0.08%" },
+      { label: "Copper (Cu)", value: "0.06%" },
+      { label: "Humic Acid", value: "TRACE" },
+      { label: "Fulvic Acid", value: "4.0%" },
+      { label: "Amino Acid", value: "4.0%" },
+      { label: "Seaweed Etract", value: "2.0%" },
     ],
   },
   {
-    slug: "green-shield",
+    slug: "nutri-leaf",
     type: "medicine",
-    name: "Green Shield",
-    image: Seda,
+    name: "NUTRI-LEAF",
+    image: NutriLeaf,
     summary:
-      "Barg va poya himoyasi uchun profilaktik agro yechim sifatida tavsiya etiladi.",
+      "Makro- va mikroelementlar, organik moddalar va dengiz o'tlari ekstraktlariga ega barg orqali oziqlantirish o'g'iti.",
     description:
-      "Green Shield barg va poyani sog'lom saqlashga qaratilgan profilaktik yechim. Mavsum davomida o'simlik tashqi omillarga bardoshli bo'lishiga yordam beradi.",
+      "NUTRI-LEAF - ushbu turdagi o'g'it tarkibida makro- va mikroelementlar, organik moddalar va dengiz o'tlari ekstraktlari mavjud. U o'simliklarni barcha zarur moddalar bilan ta'minlaydi. O'g'it tarkibidan o'rin olgan sarimsoq va achchiq qalampir ekstrakti esa hasharotlarning nafas tizimiga ta'sir etib, ularning kamayishiga olib keladi.",
     highlights: [
-      "Barg yuzasini qo'llab-quvvatlaydi",
-      "Profilaktik parvarishga mos",
-      "Sog'lom yashil massa uchun",
+      "Barg orqali oziqlantirishga mos",
+      "Dengiz o'tlari ekstrakti mavjud",
+      "Sarimsoq va achchiq qalampir ekstrakti bilan boyitilgan",
     ],
     specs: [
-      { label: "Yo'nalish", value: "Himoya" },
-      { label: "Qo'llash", value: "Barg orqali" },
-      { label: "Mahsulot turi", value: "Agro vosita" },
+      { label: "Total nitrogen (N)", value: "4.0%" },
+      { label: "Applicable phosphorus (P205)", value: "4.0%" },
+      { label: "Water soluble potassium (K20)", value: "6.0%" },
+      { label: "Boron (B)", value: "0.02%" },
+      { label: "Soluble Iron (Fe)", value: "0.1%" },
+      { label: "Soluble Manganese (Mn)", value: "0.06%" },
+      { label: "Zinc (Zn)", value: "0.1%" },
+      { label: "Copper (Cu)", value: "0.05%" },
+      { label: "Humic Acid", value: "1.0%" },
+      { label: "Folic Acid", value: "3.0%" },
+      { label: "Seaweed extract", value: "1.0%" },
+      { label: "Free Amino acid", value: "4.0%" },
     ],
   },
   {
-    slug: "fito-energy",
+    slug: "z-extra",
     type: "medicine",
-    name: "Fito Energy",
-    image: Product,
+    name: "Z-EXTRA",
+    image: ZExtra,
     summary:
-      "Vegetatsiya vaqtida o'simlikka quvvat berib, hosil sifatini yaxshilashga yordam beradi.",
+      "Xelatlangan rux elementi va amino kislotalar bilan boyitilgan, sabzavot ekinlari va bog'dorchilik uchun mos o'g'it.",
     description:
-      "Fito Energy o'simlik faol o'sayotgan paytda qo'shimcha quvvat berish uchun ishlatiladi. Hosil sifati va umumiy rivojlanishni balansda ushlab turadi.",
+      "Z-EXTRA - ushbu turdagi o'g'it xelatlangan rux elementi, hol tuzlari kislotasi ko'rinishini o'z ichiga olib, ko'p miqdorda amino- va etilendiamintetrasirka kislotasi hamda sitratlardan tashkil topgan. O'simliklar o'sishi, rivojlanishi, gullashi va ko'payishini muvozanatda saqlaydi. Barcha turdagi sabzavot ekinlari va bog'dorchilik uchun mos.",
     highlights: [
-      "Vegetatsiyada energiya beradi",
-      "Hosil sifatini qo'llab-quvvatlaydi",
-      "O'simlik rangini yaxshilaydi",
+      "Xelatlangan rux elementi mavjud",
+      "O'sish va gullashni muvozanatda saqlaydi",
+      "Sabzavot va bog'dorchilik uchun mos",
     ],
     specs: [
-      { label: "Yo'nalish", value: "Energiya" },
-      { label: "Qo'llash", value: "Vegetatsiya" },
-      { label: "Mahsulot turi", value: "Agro vosita" },
+      { label: "Soluble Zink (Zn)", value: "7.0%" },
     ],
   },
   {

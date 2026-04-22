@@ -1,5 +1,6 @@
 import Logo from "@/assets/images/union-agro-logo.png";
-import { Menu, PhoneCall } from "lucide-react";
+import { Menu, PhoneCall, X } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const navItems = [
@@ -9,15 +10,17 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between rounded-full border border-white/24 bg-[#0b2a16]/42 px-4 shadow-[0_22px_70px_rgba(0,0,0,0.18)] backdrop-blur-2xl sm:px-5">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-white/24 bg-[#0b2a16]/72 px-3 shadow-[0_22px_70px_rgba(0,0,0,0.18)] backdrop-blur-2xl sm:h-20 sm:px-5">
         <Link to="/" className="flex items-center gap-3">
-          <span className="grid h-[72px] w-24 place-items-center overflow-hidden bg-transparent">
+          <span className="grid h-14 w-20 place-items-center overflow-hidden bg-transparent sm:h-[72px] sm:w-24">
             <img
               src={Logo}
               alt="Union Agro"
-              className="h-[72px] w-24 object-contain"
+              className="h-14 w-20 object-contain sm:h-[72px] sm:w-24"
             />
           </span>
           <span className="hidden leading-tight sm:block">
@@ -51,14 +54,40 @@ const Navbar = () => {
             Bog'laning
           </a>
           <button
+            onClick={() => setIsMenuOpen((current) => !current)}
             className="grid h-11 w-11 place-items-center rounded-full border border-white/24 bg-white/14 text-white shadow-sm lg:hidden"
             type="button"
             aria-label="Menu"
           >
-            <Menu size={22} />
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="mx-auto mt-3 max-w-7xl overflow-hidden rounded-[24px] border border-white/18 bg-[#0b2a16]/92 p-3 shadow-[0_22px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl lg:hidden">
+          <div className="grid gap-2">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.to}
+                onClick={() => setIsMenuOpen(false)}
+                className="rounded-2xl px-4 py-3 text-sm font-black text-white/86 transition hover:bg-[#FBC719] hover:text-[#196931]"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="/#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FBC719] px-4 py-3 text-sm font-black text-[#196931]"
+            >
+              <PhoneCall size={16} />
+              Bog'laning
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
