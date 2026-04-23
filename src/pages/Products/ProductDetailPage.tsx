@@ -21,16 +21,16 @@ const ProductDetailPage = () => {
 
   if (!product) {
     return (
-      <main className="min-h-screen overflow-hidden bg-[#d8f4c8] text-[#123d21]">
-        <div className="fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(157,218,116,0.72),transparent_34%),radial-gradient(circle_at_78%_20%,rgba(225,255,207,0.88),transparent_30%),linear-gradient(145deg,#f8fff1_0%,#d6f3c4_42%,#a8dc83_100%)]" />
-        <div className="fixed inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.46),rgba(216,244,200,0.2)_42%,rgba(112,166,74,0.2))]" />
+      <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
+        <div className="fixed inset-0 bg-[linear-gradient(145deg,#41c83a_0%,#12bd0b_38%,#00ad00_100%)]" />
+        <div className="fixed inset-0 bg-[radial-gradient(circle_at_14%_8%,rgba(255,255,255,0.16),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,80,0,0.16))]" />
         <div className="relative">
           <Navbar />
           <section className="mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center px-4 text-center">
-            <p className="mb-4 w-fit rounded-full border border-[#196931]/24 bg-white/42 px-4 py-2 text-sm font-black text-[#196931] backdrop-blur-xl">
+            <p className="mb-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/12 px-4 py-2 text-sm font-black text-[#FBC719]">
               Mahsulot topilmadi
             </p>
-            <h1 className="text-3xl font-black text-[#123d21] sm:text-4xl">
+            <h1 className="text-3xl font-black text-white sm:text-4xl">
               Bu mahsulot bo'yicha ma'lumot mavjud emas
             </h1>
             <Link
@@ -51,9 +51,9 @@ const ProductDetailPage = () => {
   const SectionIcon = product.type === "seed" ? Sprout : PackageCheck;
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#d8f4c8] text-[#123d21]">
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(157,218,116,0.72),transparent_34%),radial-gradient(circle_at_78%_20%,rgba(225,255,207,0.88),transparent_30%),linear-gradient(145deg,#f8fff1_0%,#d6f3c4_42%,#a8dc83_100%)]" />
-      <div className="fixed inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.46),rgba(216,244,200,0.2)_42%,rgba(112,166,74,0.2))]" />
+    <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
+      <div className="fixed inset-0 bg-[linear-gradient(145deg,#41c83a_0%,#12bd0b_38%,#00ad00_100%)]" />
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_14%_8%,rgba(255,255,255,0.16),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,80,0,0.16))]" />
 
       <div className="relative">
         <Navbar />
@@ -61,7 +61,7 @@ const ProductDetailPage = () => {
         <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 sm:pb-20 lg:px-8">
           <Link
             to={backPath}
-            className="inline-flex items-center gap-2 rounded-full border border-[#196931]/18 bg-white/40 px-5 py-3 text-sm font-bold text-[#196931] shadow-[0_14px_34px_rgba(25,105,49,0.12)] backdrop-blur-xl transition hover:border-[#196931]/45 hover:bg-white/70"
+            className="inline-flex items-center gap-2 rounded-full border border-white/24 bg-white/14 px-5 py-3 text-sm font-bold text-white backdrop-blur-xl transition hover:border-[#FBC719] hover:text-[#FBC719]"
           >
             <ArrowLeft size={17} />
             {sectionTitle}ga qaytish
@@ -69,16 +69,16 @@ const ProductDetailPage = () => {
 
           <div className="mt-8 grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr]">
             <div>
-              <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#196931]/22 bg-white/42 px-4 py-2 text-xs font-black text-[#196931] shadow-[0_12px_30px_rgba(25,105,49,0.1)] backdrop-blur-xl sm:text-sm">
+              <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#FBC719]/70 bg-[#FBC719]/12 px-4 py-2 text-xs font-black text-[#FBC719] backdrop-blur-xl sm:text-sm">
                 <SectionIcon size={17} />
                 {sectionTitle} bo'limi
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-black leading-tight text-[#123d21] sm:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-6xl">
                 {product.name}
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-[#123d21]/76 sm:mt-6 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-white/82 sm:mt-6 sm:text-lg sm:leading-8">
                 {product.description}
               </p>
 
@@ -86,12 +86,12 @@ const ProductDetailPage = () => {
                 {product.specs.map((spec) => (
                   <div
                     key={spec.label}
-                    className="rounded-[18px] border border-[#196931]/14 bg-white/42 p-4 shadow-[0_14px_38px_rgba(25,105,49,0.1)] backdrop-blur-xl"
+                    className="rounded-[18px] border border-white/16 bg-white/[0.12] p-4 shadow-[0_14px_38px_rgba(0,80,0,0.12)] backdrop-blur-xl"
                   >
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#196931]">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FBC719]">
                       {spec.label}
                     </p>
-                    <p className="mt-2 text-base font-black text-[#123d21]">
+                    <p className="mt-2 text-base font-black text-white">
                       {spec.value}
                     </p>
                   </div>

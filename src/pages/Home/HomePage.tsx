@@ -248,7 +248,7 @@ const HomePage = () => {
       <section id="products" className="px-4 pb-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-8xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
           <div className="grid gap-10 md:grid-cols-4">
-            <CategoryCard
+            <CategoryCard  
               href="/product"
               image={SeedsMix}
               title="Urug'lar"
@@ -390,7 +390,7 @@ const CategoryCard = ({ href, image, title, icon }: CategoryCardProps) => (
         <div className="absolute inset-0 bg-gradient-to-t from-[#196931]/34 to-transparent opacity-0 transition group-hover:opacity-100" />
       </div>
     </div>
-    <div className="mt-4 flex items-center justify-center gap-3 text-center text-3xl font-black text-white sm:mt-6 sm:text-5xl">
+    <div className="mt-4 flex items-center justify-center gap-3 text-center text-3xl font-black text-white sm:mt-6 sm:text-3xl">
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-white/70 bg-white/12 text-white sm:h-11 sm:w-11">
         {icon}
       </span>
