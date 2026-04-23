@@ -4,6 +4,8 @@ import Fabio from "@/assets/images/8da9ce091b880623eea47f85f6d2e3f2911fa325.png"
 import SeedsMix from "@/assets/images/blob.jpeg";
 import FieldCarouselOne from "@/assets/images/watermelon-field-man.jpg";
 import FieldCarouselTwo from "@/assets/images/field-carousel-2.jpg";
+import FieldCarouselThree from "@/assets/images/field-carousel-3.jpg";
+import FieldCarouselFour from "@/assets/images/field-carousel-4.jpg";
 import ArticleMelonChild from "@/assets/images/article-melon-child.jpg";
 import ArticleWatermelonField from "@/assets/images/article-watermelon-field.jpg";
 import ArticleTomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
@@ -81,6 +83,8 @@ const articles = [
 const heroSlides = [
   { image: FieldCarouselOne, title: "Dala nazorati" },
   { image: FieldCarouselTwo, title: "Hosil sifati" },
+  { image: FieldCarouselThree, title: "Issiqxona nazorati" },
+  { image: FieldCarouselFour, title: "Gul yetishtirish" },
 ];
 
 const heroStats = [
@@ -141,9 +145,10 @@ const HomePage = () => {
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-4 py-2 text-xs font-bold text-[#FBC719] backdrop-blur-xl sm:text-sm">
               <Leaf size={17} />
+              <span>Ishonchli hosil daromadingiz manbaidir</span>
             </div>
             <h1 className="max-w-3xl text-3xl font-black leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-              Union Agro
+              Unionagro bilan
               <span className="mt-3 block w-fit max-w-full rounded-[18px] border-2 border-[#FBC719] px-3 py-1 text-white sm:rounded-[22px]">
                 hosilingiz uchun zamonaviy yechimlar
               </span>
@@ -194,10 +199,13 @@ const HomePage = () => {
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-[18px] border border-white/18 bg-white/14 px-4 py-3 text-white backdrop-blur-2xl sm:bottom-5 sm:left-5 sm:right-5 sm:rounded-[22px] sm:px-5 sm:py-4">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#FBC719] sm:text-xs sm:tracking-[0.28em]">
-                      Carousel
+                      Unionagro group
                     </p>
                     <p className="mt-1 text-base font-black sm:text-xl">
                       {heroSlides[activeSlide].title}
+                    </p>
+                    <p className="mt-1 max-w-[230px] text-xs font-semibold leading-5 text-white/68 sm:max-w-sm sm:text-sm">
+                      Dala tajribasi va sifatli hosil sari amaliy yondashuv.
                     </p>
                   </div>
                   <div className="flex gap-2">
@@ -238,8 +246,8 @@ const HomePage = () => {
       </section>
 
       <section id="products" className="px-4 pb-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
-          <div className="grid gap-5 md:grid-cols-2">
+        <div className="mx-auto max-w-8xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
+          <div className="grid gap-10 md:grid-cols-4">
             <CategoryCard
               href="/product"
               image={SeedsMix}
@@ -249,8 +257,22 @@ const HomePage = () => {
             <CategoryCard
               href="/medicine"
               image={Fabio}
-              title="Dorilar"
+              title="Ozuqalar"
               icon={<Beaker size={24} />}
+            />
+            <CategoryCard
+              href="/medicine"
+              image={Fabio}
+              title="Tuzoqlar"
+              icon={<Beaker size={24} />}
+              
+            />
+            <CategoryCard
+              href="/medicine"
+              image={Fabio}
+              title="Jonli bakteriyalar"
+              icon={<Beaker size={24} />}
+              
             />
           </div>
         </div>

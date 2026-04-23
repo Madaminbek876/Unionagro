@@ -5,21 +5,21 @@ import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
   return (
-    <main className="min-h-screen bg-[#0f321b] text-white">
-      <div className="fixed inset-0 bg-[url('/dala.webp')] bg-cover bg-center" />
-      <div className="fixed inset-0 bg-[#0b2a16]/86" />
+    <main className="min-h-screen overflow-hidden bg-[#d8f4c8] text-[#123d21]">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(157,218,116,0.72),transparent_34%),radial-gradient(circle_at_78%_20%,rgba(225,255,207,0.88),transparent_30%),linear-gradient(145deg,#f8fff1_0%,#d6f3c4_42%,#a8dc83_100%)]" />
+      <div className="fixed inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.46),rgba(216,244,200,0.2)_42%,rgba(112,166,74,0.2))]" />
       <div className="relative">
         <Navbar />
         <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 sm:pb-20 sm:pt-10 lg:px-8">
           <Link
             to="/"
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-xl transition hover:border-[#FBC719] hover:text-[#FBC719]"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#196931]/18 bg-white/40 px-5 py-3 text-sm font-bold text-[#196931] shadow-[0_14px_34px_rgba(25,105,49,0.12)] backdrop-blur-xl transition hover:border-[#196931]/45 hover:bg-white/70"
           >
             <ArrowLeft size={17} />
             Bosh sahifaga
           </Link>
 
-          <h1 className="text-center text-3xl font-black tracking-wide text-white sm:text-5xl">
+          <h1 className="text-center text-3xl font-black tracking-wide text-[#123d21] sm:text-5xl">
             Urug'lar
           </h1>
 

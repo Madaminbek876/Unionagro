@@ -21,16 +21,16 @@ const ProductDetailPage = () => {
 
   if (!product) {
     return (
-      <main className="min-h-screen bg-[#0f321b] text-white">
-        <div className="fixed inset-0 bg-[url('/dala.webp')] bg-cover bg-center" />
-        <div className="fixed inset-0 bg-[#0b2a16]/88" />
+      <main className="min-h-screen overflow-hidden bg-[#d8f4c8] text-[#123d21]">
+        <div className="fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(157,218,116,0.72),transparent_34%),radial-gradient(circle_at_78%_20%,rgba(225,255,207,0.88),transparent_30%),linear-gradient(145deg,#f8fff1_0%,#d6f3c4_42%,#a8dc83_100%)]" />
+        <div className="fixed inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.46),rgba(216,244,200,0.2)_42%,rgba(112,166,74,0.2))]" />
         <div className="relative">
           <Navbar />
           <section className="mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center px-4 text-center">
-            <p className="mb-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/12 px-4 py-2 text-sm font-black text-[#FBC719]">
+            <p className="mb-4 w-fit rounded-full border border-[#196931]/24 bg-white/42 px-4 py-2 text-sm font-black text-[#196931] backdrop-blur-xl">
               Mahsulot topilmadi
             </p>
-            <h1 className="text-3xl font-black text-white sm:text-4xl">
+            <h1 className="text-3xl font-black text-[#123d21] sm:text-4xl">
               Bu mahsulot bo'yicha ma'lumot mavjud emas
             </h1>
             <Link
@@ -51,10 +51,9 @@ const ProductDetailPage = () => {
   const SectionIcon = product.type === "seed" ? Sprout : PackageCheck;
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#0f321b] text-white">
-      <div className="fixed inset-0 bg-[url('/dala.webp')] bg-cover bg-center" />
-      <div className="fixed inset-0 bg-[#071f10]/88" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(251,199,25,0.18),transparent_28%),linear-gradient(135deg,rgba(25,105,49,0.88),rgba(6,23,13,0.94)_55%,rgba(15,50,27,0.96))]" />
+    <main className="min-h-screen overflow-hidden bg-[#d8f4c8] text-[#123d21]">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(157,218,116,0.72),transparent_34%),radial-gradient(circle_at_78%_20%,rgba(225,255,207,0.88),transparent_30%),linear-gradient(145deg,#f8fff1_0%,#d6f3c4_42%,#a8dc83_100%)]" />
+      <div className="fixed inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.46),rgba(216,244,200,0.2)_42%,rgba(112,166,74,0.2))]" />
 
       <div className="relative">
         <Navbar />
@@ -62,7 +61,7 @@ const ProductDetailPage = () => {
         <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 sm:pb-20 lg:px-8">
           <Link
             to={backPath}
-            className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur-xl transition hover:border-[#FBC719] hover:text-[#FBC719]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#196931]/18 bg-white/40 px-5 py-3 text-sm font-bold text-[#196931] shadow-[0_14px_34px_rgba(25,105,49,0.12)] backdrop-blur-xl transition hover:border-[#196931]/45 hover:bg-white/70"
           >
             <ArrowLeft size={17} />
             {sectionTitle}ga qaytish
@@ -70,16 +69,16 @@ const ProductDetailPage = () => {
 
           <div className="mt-8 grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr]">
             <div>
-              <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#FBC719]/70 bg-[#FBC719]/12 px-4 py-2 text-xs font-black text-[#FBC719] backdrop-blur-xl sm:text-sm">
+              <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#196931]/22 bg-white/42 px-4 py-2 text-xs font-black text-[#196931] shadow-[0_12px_30px_rgba(25,105,49,0.1)] backdrop-blur-xl sm:text-sm">
                 <SectionIcon size={17} />
                 {sectionTitle} bo'limi
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-black leading-tight text-[#123d21] sm:text-6xl">
                 {product.name}
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-white/76 sm:mt-6 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-2xl text-base font-semibold leading-7 text-[#123d21]/76 sm:mt-6 sm:text-lg sm:leading-8">
                 {product.description}
               </p>
 
@@ -87,12 +86,12 @@ const ProductDetailPage = () => {
                 {product.specs.map((spec) => (
                   <div
                     key={spec.label}
-                    className="rounded-[18px] border border-white/12 bg-white/[0.08] p-4 backdrop-blur-xl"
+                    className="rounded-[18px] border border-[#196931]/14 bg-white/42 p-4 shadow-[0_14px_38px_rgba(25,105,49,0.1)] backdrop-blur-xl"
                   >
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#FBC719]">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#196931]">
                       {spec.label}
                     </p>
-                    <p className="mt-2 text-base font-black text-white">
+                    <p className="mt-2 text-base font-black text-[#123d21]">
                       {spec.value}
                     </p>
                   </div>
@@ -118,7 +117,7 @@ const ProductDetailPage = () => {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-5 sm:mt-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="mt-8 grid items-start gap-5 sm:mt-10 lg:grid-cols-[0.72fr_1.28fr]">
             <div className="group relative overflow-hidden rounded-[22px] border border-[#FBC719]/34 bg-[#196931]/72 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#FBC719]/80 hover:bg-[#196931]/88 hover:shadow-[0_28px_80px_rgba(0,0,0,0.28)] sm:rounded-[24px] sm:p-6">
               <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-[#FBC719]/10 blur-2xl transition group-hover:bg-[#FBC719]/20" />
               <div className="relative mb-4 grid h-12 w-12 place-items-center rounded-2xl border border-[#FBC719]/80 bg-[#FBC719]/15 text-[#FBC719] transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
@@ -133,18 +132,18 @@ const ProductDetailPage = () => {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {product.highlights.map((item) => (
                 <div
                   key={item}
-                  className="group relative min-h-[132px] overflow-hidden rounded-[22px] border border-white/12 bg-white/[0.08] p-5 shadow-[0_18px_55px_rgba(0,0,0,0.16)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#FBC719]/70 hover:bg-[#172c1d]/86 hover:shadow-[0_24px_70px_rgba(0,0,0,0.24)]"
+                  className="group relative flex items-start gap-3 overflow-hidden rounded-[18px] border border-white/12 bg-white/[0.08] p-4 shadow-[0_16px_44px_rgba(0,0,0,0.14)] backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:border-[#FBC719]/70 hover:bg-[#172c1d]/86 hover:shadow-[0_22px_62px_rgba(0,0,0,0.22)]"
                 >
-                  <div className="absolute right-0 top-0 h-20 w-20 rounded-full bg-[#FBC719]/8 blur-2xl transition group-hover:bg-[#FBC719]/18" />
+                  <div className="absolute right-0 top-0 h-16 w-16 rounded-full bg-[#FBC719]/8 blur-2xl transition group-hover:bg-[#FBC719]/18" />
                   <CheckCircle2
-                    className="relative mb-4 text-[#FBC719] transition group-hover:scale-110"
-                    size={25}
+                    className="relative mt-0.5 shrink-0 text-[#FBC719] transition group-hover:scale-110"
+                    size={20}
                   />
-                  <p className="relative text-base font-black leading-6 text-white">
+                  <p className="relative text-sm font-black leading-6 text-white sm:text-[15px]">
                     {item}
                   </p>
                 </div>

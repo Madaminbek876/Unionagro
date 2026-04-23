@@ -25,7 +25,7 @@ const Navbar = () => {
           </span>
           <span className="hidden leading-tight sm:block">
             <span className="block text-lg font-black tracking-wide text-white">
-              UNION AGRO
+              UNIONAGRO GROUP
             </span>
             <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[#FBC719]">
               Agro sanoat
