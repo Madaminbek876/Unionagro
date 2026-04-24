@@ -233,11 +233,17 @@ const HomePage = () => {
       </section>
 
       <section className="relative overflow-visible pt-28 sm:pt-32">
-        <img
-          src={HomeSectionsBg}
-          alt=""
+        <video
           className="absolute inset-0 h-full w-full object-cover"
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={HomeSectionsBg}
+        >
+          <source src="/0_Field_Green_1920x1080.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
         <div className="absolute left-0 right-0 top-0 z-10 -translate-y-1/2 px-4 sm:px-6 lg:px-8">
