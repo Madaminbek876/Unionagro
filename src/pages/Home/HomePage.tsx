@@ -245,7 +245,7 @@ const HomePage = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
-        <div className="absolute left-0 right-0 top-0 z-10 translate-y-[4%] px-4 sm:-translate-y-1/2 sm:px-6 lg:px-8">
+        <div className="absolute left-0 right-0 top-0 z-10 translate-y-[8%] px-4 sm:-translate-y-1/2 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-[430px] grid-cols-2 gap-x-4 gap-y-6 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:max-w-6xl sm:rounded-[32px] sm:p-7 lg:grid-cols-4">
             {heroStats.map((stat, index) => (
               <div
@@ -390,7 +390,7 @@ type CategoryCardProps = {
 };
 const CategoryCard = ({ href, image, title }: CategoryCardProps) => (
   <a href={href} className="group block">
-    <div className="overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
+    <div className="overflow-hidden rounded-[28px] border-3 border-yellow-400 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
       <div className="relative aspect-[1.08/1] overflow-hidden">
         <img
           src={image}
