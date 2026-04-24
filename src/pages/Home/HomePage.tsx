@@ -231,7 +231,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="relative -mt-10 overflow-hidden sm:-mt-16">
+      <section className="relative overflow-hidden">
         <img
           src={HomeSectionsBg}
           alt=""

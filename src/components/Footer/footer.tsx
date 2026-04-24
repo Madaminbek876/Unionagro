@@ -1,10 +1,13 @@
 import {
   ArrowRight,
+  Facebook,
   Globe2,
   Home,
+  Instagram,
   MapPin,
   PackageOpen,
   Phone,
+  Send,
   Sprout,
 } from "lucide-react";
 import FooterBg from "@/assets/images/footer-bg.jpg";
@@ -23,7 +26,12 @@ const contacts = [
     value: "Xasanboy lag'moni, Hasanboy 2/2",
   },
   { icon: Phone, label: "Telefon", value: "+998 90 123 45 67" },
-  { icon: Globe2, label: "Sayt", value: "union-agro.uz" },
+  {
+    icon: Globe2,
+    label: "Sayt",
+    value: "greenvillage.uz",
+    href: "https://greenvillage.uz/",
+  },
 ];
 
 const Footer = () => {
@@ -40,7 +48,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-[#06170d]/94 via-[#196931]/82 to-[#1fb05a]/72" />
       <div className="absolute inset-0 bg-[#06170d]/28" />
 
-      <div className="relative mx-auto grid max-w-[1760px] gap-8 lg:min-h-[520px] lg:grid-cols-[300px_minmax(520px,1.35fr)_340px] lg:items-center lg:justify-between">
+      <div className="relative mx-auto grid max-w-[1860px] gap-8 lg:min-h-[520px] lg:grid-cols-[260px_minmax(760px,1.7fr)_300px] lg:items-center lg:justify-between">
         <div className="lg:justify-self-start">
           <div className="space-y-2">
             {navigation.map((item) => {
@@ -62,15 +70,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-col items-center justify-center lg:justify-self-center">
-          <p className="text-center text-xs font-black uppercase tracking-[0.28em] text-white/72 sm:text-sm sm:tracking-[0.42em]">
-            Ofis lokatsiyasi
-          </p>
-          <div className="mt-6 w-full max-w-3xl overflow-hidden rounded-[22px] border border-white/18 bg-white/10 p-2 shadow-[0_24px_70px_rgba(0,0,0,0.26)] backdrop-blur-xl sm:mt-8 sm:rounded-[28px] sm:p-3">
+        <div className="flex min-w-0 flex-col items-center justify-center lg:justify-self-center lg:w-full">
+          <div className="mt-6 w-full max-w-3xl overflow-hidden rounded-[22px] border border-white/18 bg-white/10 p-2 shadow-[0_24px_70px_rgba(0,0,0,0.26)] backdrop-blur-xl sm:mt-8 sm:rounded-[28px] sm:p-3 lg:max-w-5xl">
             <iframe
               title="Union Agro ofis lokatsiyasi"
               src="https://yandex.com/map-widget/v1/?ll=69.259895%2C41.396785&mode=search&text=Xasanboy%20lag%27moni%20Hasanboy%202%2F2%20Toshkent&z=18"
-              className="h-[260px] w-full rounded-[16px] border-0 sm:h-[360px] sm:rounded-[20px]"
+              className="h-[260px] w-full rounded-[16px] border-0 sm:h-[360px] sm:rounded-[20px] lg:h-[420px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
@@ -100,13 +105,53 @@ const Footer = () => {
                     <span className="block text-xs font-black uppercase tracking-[0.22em] text-white/72">
                       {item.label}
                     </span>
-                    <span className="break-words text-base font-black sm:text-lg">
-                      {item.value}
-                    </span>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="break-words text-base font-black transition hover:text-[#FBC719] sm:text-lg"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="break-words text-base font-black sm:text-lg">
+                        {item.value}
+                      </span>
+                    )}
                   </span>
                 </div>
               );
             })}
+            <div className="grid grid-cols-3 gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[16px] border border-white/22 bg-white/8 text-white transition hover:border-[#FBC719] hover:text-[#FBC719]"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/union_agro?igsh=aTdvaWFidGZpcWVj&utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[16px] border border-white/22 bg-white/8 text-white transition hover:border-[#FBC719] hover:text-[#FBC719]"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="https://t.me/UnionAgroUz1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Telegram"
+                className="inline-flex h-12 w-full items-center justify-center rounded-[16px] border border-white/22 bg-white/8 text-white transition hover:border-[#FBC719] hover:text-[#FBC719]"
+              >
+                <Send size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
