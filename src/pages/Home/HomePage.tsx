@@ -89,9 +89,10 @@ const heroSlides = [
 ];
 
 const heroStats = [
-  { value: 120, label: "umumiy urug'lar soni" },
-  { value: 500, label: "mijozlar soni" },
-  { value: 80, label: "umumiy dorilar soni" },
+  { value: 10, label: "umumiy urug'lar soni" },
+  { value: 100, label: "mijozlar soni" },
+  { value: 30, label: "umumiy dorilar soni" },
+  { value: 5, label: "hamkorlar soni" },
 ];
 
 const HomePage = () => {
@@ -231,7 +232,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-visible pt-28 sm:pt-32">
         <img
           src={HomeSectionsBg}
           alt=""
@@ -239,11 +240,13 @@ const HomePage = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
-
-        <div className="relative px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-5xl gap-4 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:rounded-[32px] sm:p-7 sm:grid-cols-3">
+        <div className="absolute left-0 right-0 top-0 z-10 -translate-y-1/2 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-6xl gap-4 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:rounded-[32px] sm:p-7 sm:grid-cols-2 lg:grid-cols-4">
             {heroStats.map((stat, index) => (
-              <div key={stat.label} className="text-center sm:text-left">
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center text-center"
+              >
                 <p className="text-4xl font-black text-[#FBC719] sm:text-5xl">
                   {animatedStats[index]}+
                 </p>
@@ -254,9 +257,8 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-
         <div id="products" className="relative px-4 pb-10 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-8xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
+          <div className="mx-auto max-w-7xl rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
             <div className="grid gap-10 md:grid-cols-4">
               <CategoryCard
                 href="/product"
@@ -398,11 +400,11 @@ const CategoryCard = ({ href, image, title, icon }: CategoryCardProps) => (
         <div className="absolute inset-0 bg-gradient-to-t from-[#196931]/34 to-transparent opacity-0 transition group-hover:opacity-100" />
       </div>
     </div>
-    <div className="mt-4 flex items-center justify-center gap-3 text-center text-3xl font-black text-white sm:mt-6 sm:text-3xl">
+    <div className="mt-4 flex items-center justify-center gap-3 text-center text-[1.45rem] font-black text-white sm:mt-6 sm:text-[1.6rem] lg:text-[1.75rem]">
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-white/70 bg-white/12 text-white sm:h-11 sm:w-11">
         {icon}
       </span>
-      {title}
+      <span className="whitespace-nowrap">{title}</span>
     </div>
   </a>
 );

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar/navbar";
 import { getCatalogProduct } from "@/data/catalog";
+import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import {
   ArrowLeft,
   BadgeCheck,
@@ -22,8 +23,13 @@ const ProductDetailPage = () => {
   if (!product) {
     return (
       <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
-        <div className="fixed inset-0 bg-[linear-gradient(145deg,#41c83a_0%,#12bd0b_38%,#00ad00_100%)]" />
-        <div className="fixed inset-0 bg-[radial-gradient(circle_at_14%_8%,rgba(255,255,255,0.16),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,80,0,0.16))]" />
+        <img
+          src={HomeSectionsBg}
+          alt=""
+          className="fixed inset-0 h-full w-full object-cover"
+        />
+        <div className="fixed inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
+        <div className="fixed inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
         <div className="relative">
           <Navbar />
           <section className="mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center px-4 text-center">
@@ -52,8 +58,13 @@ const ProductDetailPage = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
-      <div className="fixed inset-0 bg-[linear-gradient(145deg,#41c83a_0%,#12bd0b_38%,#00ad00_100%)]" />
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_14%_8%,rgba(255,255,255,0.16),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,80,0,0.16))]" />
+      <img
+        src={HomeSectionsBg}
+        alt=""
+        className="fixed inset-0 h-full w-full object-cover"
+      />
+      <div className="fixed inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
+      <div className="fixed inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
 
       <div className="relative">
         <Navbar />
