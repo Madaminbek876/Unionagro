@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowRight,
   BadgeCheck,
-  Beaker,
   Leaf,
   PhoneCall,
   ShieldCheck,
@@ -89,10 +88,10 @@ const heroSlides = [
 ];
 
 const heroStats = [
-  { value: 10, label: "umumiy urug'lar soni" },
-  { value: 100, label: "mijozlar soni" },
-  { value: 30, label: "umumiy dorilar soni" },
-  { value: 5, label: "hamkorlar soni" },
+  { value: 10, label: "umumiy urug'lar" },
+  { value: 100, label: "mijozlar" },
+  { value: 30, label: "umumiy dorilar" },
+  { value: 5, label: "hamkorlar" },
 ];
 
 const HomePage = () => {
@@ -232,7 +231,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="relative overflow-visible pt-28 sm:pt-32">
+      <section className="relative overflow-visible pt-24 sm:pt-32">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -246,49 +245,45 @@ const HomePage = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
-        <div className="absolute left-0 right-0 top-0 z-10 -translate-y-1/2 px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-6xl gap-4 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:rounded-[32px] sm:p-7 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="absolute left-0 right-0 top-0 z-10 translate-y-[4%] px-4 sm:-translate-y-1/2 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-[430px] grid-cols-2 gap-x-4 gap-y-6 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:max-w-6xl sm:rounded-[32px] sm:p-7 lg:grid-cols-4">
             {heroStats.map((stat, index) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center justify-center text-center"
+                className="flex min-w-0 flex-col items-center justify-center px-2 text-center"
               >
-                <p className="text-4xl font-black text-[#FBC719] sm:text-5xl">
+                <p className="text-[3rem] font-black leading-none text-[#FBC719] sm:text-5xl">
                   {animatedStats[index]}+
                 </p>
-                <p className="mt-2 text-base font-bold text-white/78 sm:mt-3 sm:text-lg">
+                <p className="mt-3 max-w-[9.5rem] text-sm font-semibold leading-5 text-white/78 sm:mt-3 sm:max-w-none sm:text-lg">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
         </div>
-        <div id="products" className="relative px-4 pb-10 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-7xl rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
-            <div className="grid gap-10 md:grid-cols-4">
+        <div id="products" className="relative px-4 pb-10 pt-28 sm:px-6 sm:pt-0 lg:px-8">
+          <div className="mx-auto max-w-7xl mt-20 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
+            <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 md:gap-10">
               <CategoryCard
                 href="/product"
                 image={SeedsMix}
                 title="Urug'lar"
-                icon={<Sprout size={24} />}
               />
               <CategoryCard
                 href="/medicine"
                 image={Fabio}
                 title="Ozuqalar"
-                icon={<Beaker size={24} />}
               />
               <CategoryCard
                 href="/medicine"
                 image={Fabio}
                 title="Tuzoqlar"
-                icon={<Beaker size={24} />}
               />
               <CategoryCard
                 href="/medicine"
                 image={Fabio}
                 title="Jonli bakteriyalar"
-                icon={<Beaker size={24} />}
               />
             </div>
           </div>
@@ -392,9 +387,8 @@ type CategoryCardProps = {
   href: string;
   image: string;
   title: string;
-  icon: React.ReactNode;
 };
-const CategoryCard = ({ href, image, title, icon }: CategoryCardProps) => (
+const CategoryCard = ({ href, image, title }: CategoryCardProps) => (
   <a href={href} className="group block">
     <div className="overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
       <div className="relative aspect-[1.08/1] overflow-hidden">
@@ -406,10 +400,7 @@ const CategoryCard = ({ href, image, title, icon }: CategoryCardProps) => (
         <div className="absolute inset-0 bg-gradient-to-t from-[#196931]/34 to-transparent opacity-0 transition group-hover:opacity-100" />
       </div>
     </div>
-    <div className="mt-4 flex items-center justify-center gap-3 text-center text-[1.45rem] font-black text-white sm:mt-6 sm:text-[1.6rem] lg:text-[1.75rem]">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl border border-white/70 bg-white/12 text-white sm:h-11 sm:w-11">
-        {icon}
-      </span>
+    <div className="mt-4 flex items-center justify-center text-center text-[0.9rem] font-semibold text-white sm:mt-5 sm:text-[1.2rem] lg:mt-6 lg:text-[1.75rem]">
       <span className="whitespace-nowrap">{title}</span>
     </div>
   </a>

@@ -14,8 +14,8 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 px-4  sm:px-6 lg:px-8">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-white/24 bg-[#0b2a16]/72 px-3 shadow-[0_22px_70px_rgba(0,0,0,0.18)] backdrop-blur-2xl sm:h-20 sm:px-5">
-        <Link to="/" className="flex items-center gap-3">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-white/24 bg-[#0b2a16]/72 px-3 shadow-[0_22px_70px_rgba(0,0,0,0.18)] backdrop-blur-2xl sm:h-20 sm:px-5 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:justify-normal">
+        <Link to="/" className="flex items-center gap-3 lg:justify-self-start">
           <span className="grid h-14 w-20 place-items-center overflow-hidden bg-transparent sm:h-[72px] sm:w-24">
             <img
               src={Logo}
@@ -33,7 +33,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 rounded-full border border-white/18 bg-white/10 p-1.5 shadow-inner lg:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-white/18 bg-white/10 p-1.5 shadow-inner lg:flex lg:justify-self-center">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -45,7 +45,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:justify-self-end">
           <a
             href="/#contact"
             className="hidden items-center gap-2 rounded-full bg-[#196931] px-5 py-3 text-sm font-black text-white shadow-[0_14px_30px_rgba(25,105,49,0.24)] transition hover:bg-[#FBC719] hover:text-white md:flex"
