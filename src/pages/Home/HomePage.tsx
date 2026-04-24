@@ -11,6 +11,7 @@ import ArticleWatermelonField from "@/assets/images/article-watermelon-field.jpg
 import ArticleTomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
 import ArticleTomatoRed from "@/assets/images/article-tomato-red.jpg";
 import ArticleTomatoGreen from "@/assets/images/article-tomato-green.jpg";
+import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
@@ -230,56 +231,63 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="-mt-10 px-4 pb-12 sm:-mt-16 sm:px-6 lg:px-8">
-        <div className="relative z-10 mx-auto grid max-w-5xl gap-4 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:grid-cols-3 sm:rounded-[32px] sm:p-7">
-          {heroStats.map((stat, index) => (
-            <div key={stat.label} className="text-center sm:text-left">
-              <p className="text-4xl font-black text-[#FBC719] sm:text-5xl">
-                {animatedStats[index]}+
-              </p>
-              <p className="mt-2 text-base font-bold text-white/78 sm:mt-3 sm:text-lg">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <section className="relative -mt-10 overflow-hidden sm:-mt-16">
+        <img
+          src={HomeSectionsBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06170d]/88 via-[#123d21]/68 to-[#196931]/24" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06170d]/84 via-transparent to-[#06170d]/34" />
 
-      <section id="products" className="px-4 pb-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-8xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
-          <div className="grid gap-10 md:grid-cols-4">
-            <CategoryCard  
-              href="/product"
-              image={SeedsMix}
-              title="Urug'lar"
-              icon={<Sprout size={24} />}
-            />
-            <CategoryCard
-              href="/medicine"
-              image={Fabio}
-              title="Ozuqalar"
-              icon={<Beaker size={24} />}
-            />
-            <CategoryCard
-              href="/medicine"
-              image={Fabio}
-              title="Tuzoqlar"
-              icon={<Beaker size={24} />}
-              
-            />
-            <CategoryCard
-              href="/medicine"
-              image={Fabio}
-              title="Jonli bakteriyalar"
-              icon={<Beaker size={24} />}
-              
-            />
+        <div className="relative px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-5xl gap-4 rounded-[24px] border border-white/20 bg-[#172c1d]/88 p-5 shadow-[0_28px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:rounded-[32px] sm:p-7 sm:grid-cols-3">
+            {heroStats.map((stat, index) => (
+              <div key={stat.label} className="text-center sm:text-left">
+                <p className="text-4xl font-black text-[#FBC719] sm:text-5xl">
+                  {animatedStats[index]}+
+                </p>
+                <p className="mt-2 text-base font-bold text-white/78 sm:mt-3 sm:text-lg">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div id="products" className="relative px-4 pb-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-8xl rounded-[24px] border border-white/10 bg-[#166b2f] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.26)] backdrop-blur-2xl sm:rounded-[34px] sm:p-6">
+            <div className="grid gap-10 md:grid-cols-4">
+              <CategoryCard
+                href="/product"
+                image={SeedsMix}
+                title="Urug'lar"
+                icon={<Sprout size={24} />}
+              />
+              <CategoryCard
+                href="/medicine"
+                image={Fabio}
+                title="Ozuqalar"
+                icon={<Beaker size={24} />}
+              />
+              <CategoryCard
+                href="/medicine"
+                image={Fabio}
+                title="Tuzoqlar"
+                icon={<Beaker size={24} />}
+              />
+              <CategoryCard
+                href="/medicine"
+                image={Fabio}
+                title="Jonli bakteriyalar"
+                icon={<Beaker size={24} />}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <p className="mx-auto mb-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/12 px-4 py-2 text-sm font-black text-[#FBC719]">
               Agro yangiliklar
@@ -304,7 +312,7 @@ const HomePage = () => {
               return (
                 <div
                   key={item.title}
-                  className="group relative overflow-hidden rounded-[30px] border border-white/12 bg-white/[0.08] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[#FBC719]/70 hover:bg-[#172c1d]/86"
+                  className="group relative overflow-hidden rounded-[30px] border border-white/14 bg-[linear-gradient(145deg,#154c1f_0%,#123d1b_55%,#295f1e_100%)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-[#FBC719]/70 hover:bg-[linear-gradient(145deg,#185723_0%,#15461d_55%,#2f6a21_100%)]"
                 >
                   <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-[#FBC719]/10 blur-2xl transition group-hover:bg-[#FBC719]/20" />
                   <div className="relative mb-5 grid h-13 w-13 place-items-center rounded-2xl border border-[#FBC719]/80 bg-[#FBC719]/12 text-[#FBC719]">
@@ -321,6 +329,7 @@ const HomePage = () => {
               );
             })}
           </div>
+        </div>
         </div>
       </section>
 
@@ -377,7 +386,6 @@ type CategoryCardProps = {
   title: string;
   icon: React.ReactNode;
 };
-
 const CategoryCard = ({ href, image, title, icon }: CategoryCardProps) => (
   <a href={href} className="group block">
     <div className="overflow-hidden rounded-[28px] border-4 border-white bg-white shadow-[0_18px_45px_rgba(0,0,0,0.18)]">
