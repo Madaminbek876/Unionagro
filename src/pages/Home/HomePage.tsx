@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer";
-import Fabio from "@/assets/images/8da9ce091b880623eea47f85f6d2e3f2911fa325.png";
-import SeedsMix from "@/assets/images/blob.jpeg";
+import HomeBacteria from "@/assets/images/home-bacteria.jpg";
+import HomeNutrition from "@/assets/images/home-nutrition.jpg";
+import SeedsMix from "@/assets/images/home-seeds.jpg";
+import HomeTraps from "@/assets/images/home-traps.jpg";
 import FieldCarouselOne from "@/assets/images/watermelon-field-man.jpg";
 import FieldCarouselTwo from "@/assets/images/field-carousel-2.jpg";
 import FieldCarouselThree from "@/assets/images/field-carousel-3.jpg";
@@ -272,17 +274,17 @@ const HomePage = () => {
               />
               <CategoryCard
                 href="/medicine"
-                image={Fabio}
+                image={HomeNutrition}
                 title="Ozuqalar"
               />
               <CategoryCard
-                href="/medicine"
-                image={Fabio}
+                href="/medicine?category=traps"
+                image={HomeTraps}
                 title="Tuzoqlar"
               />
               <CategoryCard
-                href="/medicine"
-                image={Fabio}
+                href="/medicine?category=bacteria"
+                image={HomeBacteria}
                 title="Jonli bakteriyalar"
               />
             </div>

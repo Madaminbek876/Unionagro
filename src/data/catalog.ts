@@ -1,14 +1,21 @@
-import WatermelonField from "@/assets/images/article-watermelon-field.jpg";
+﻿import WatermelonField from "@/assets/images/article-watermelon-field.jpg";
 import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
 import TomatoClose from "@/assets/images/article-tomato-close.jpg";
 import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
 import SeedsMix from "@/assets/images/blob.jpeg";
 import NutriLeaf from "@/assets/images/nutri-leaf.png";
+import ProtonV367 from "@/assets/images/proton-v367.jpg";
+import ProtonBeforeAfter from "@/assets/images/proton-before-after.jpg";
+import ProtonEffect from "@/assets/images/proton-effect.jpg";
+import FabioInfoOne from "@/assets/images/fabio-info-1.png";
+import FabioInfoTwo from "@/assets/images/fabio-info-2.png";
 import RadikaBase from "@/assets/images/radika-base.png";
 import VitalPlusCalcium from "@/assets/images/vital-plus-calcium.png";
+import HomeBacteria from "@/assets/images/home-bacteria.jpg";
+import HomeTraps from "@/assets/images/home-traps.jpg";
+import TrapBoard from "@/assets/images/trap-board.jpg";
 import ZExtra from "@/assets/images/z-extra.png";
-import MedicineSix from "@/assets/images/medicine-6.jpg";
 import MedicineSeven from "@/assets/images/medicine-7.jpg";
 
 export type CatalogType = "seed" | "medicine";
@@ -24,6 +31,10 @@ export type CatalogProduct = {
   specs: {
     label: string;
     value: string;
+  }[];
+  mediaSections?: {
+    title: string;
+    image: string;
   }[];
 };
 
@@ -275,30 +286,71 @@ export const medicineProducts: CatalogProduct[] = [
     ],
   },
   {
-    slug: "medicine-6",
+    slug: "proton-v367",
     type: "medicine",
-    name: "OCEAN",
-    image: MedicineSix,
+    name: "Proton V-367",
+    image: ProtonV367,
     summary:
-      "Baliq qoldiqlari va suv o'tlaridan olingan aminokislotalarga boy o'g'it.",
+      "Viruslar va viroidlarga qarshi yuqori barqarorlikni ta'minlovchi maxsus preparat.",
     description:
-      "Ushbu o'g'it butkul baliq qoldiqlari va suv o'tlaridan olingan turli xil aminokislotalardan iborat bo'lib, sabzavot, don va bog' ekinlari uchun zarur makro- va mikroelementlarni yetarli miqdorda saqlaydi. Ushbu o'g'itdagi organik moddalar yerning jismoniy tarkibi, havo almashishi va suv saqlash hajmi ortishiga ta'sir ko'rsatadi, yer eroziyasining oldini oladi, erdagi foydali mikroorganizmlar uchun ozuqa hisoblanadi, ularning ko'payishiga yordam berib, natijada er unumdorligini oshiradi. Aminokislotalarni katta miqdorda saqlaydigan ushbu o'g'it o'simlikning atrof-muhit noqulay sharoitlariga chidamkorligini kuchaytiradi.",
+      "Proton V-367 - oвЂsimliklarni viruslar va viroidlarga qarshi yuqori barqarorlik bilan himoya qilishga yordam beruvchi maxsus preparat. U virusning yuqishida faol rol oвЂynaydigan proteaza fermentini ingibirlaydi va past chidamlilik davrlarida yuzaga keladigan immunitet susayishini kamaytirishga yordam beradi. Organik tarkibga ega, eksportda qoldiq bilan bogвЂliq muammolar keltirib chiqarmaydi, asalarilar uchun zararsiz va kutish vaqti 0 kun. Preparat pH ni pasaytiruvchi va barqarorlashtiruvchi xususiyatlarga ham ega.",
     highlights: [
-      "Tarkibidagi suv o'tlari mevalar hajmi va mahsulot unumdorligini oshiradi",
-      "O'simlikning sovuq urishi va turli kasalliklarga chidamkorligini ta'minlaydi",
-      "Mineral moddalarning erga singuvchanligini oshiradi",
-      "Turli stresslarga qarshilik ko'rsatishda yordam beradi",
-      "Mevalarni omborlarga joylash vaqtida zararlarni kamaytirishga yordam beradi",
-      "Sabzavot va bog' ekinlari uchun ishlatilishi, oziq moddalar o'zlashtiriluvchanligi darajasini ko'tarishi mumkin",
-      "O'simlikdagi oksil miqdorini oshirishga va mahsulot sifatini yaxshilashga imkon beradi",
+      "Virusning yuqishida faol rol oвЂynaydigan proteaza fermentini ingibirlaydi",
+      "Organik tarkibga ega",
+      "Eksport qilishda qoldiqlar bilan bogвЂliq muammolar yuzaga kelmaydi",
+      "Asalarilar uchun zararsiz, kutish vaqti 0 kun",
+      "Qoldiqlar bilan bogвЂliq muammolar keltirib chiqarmaydi",
+      "pH ni pasaytiruvchi va barqarorlashtiruvchi xususiyatlarga ega",
+      "OвЂsimliklarning pH va ishqoriy muvozanatini boshqaradi",
+      "OвЂsimliklarning fiziologik rivojlanishiga yordam beradi",
+      "OвЂsimliklarga viruslar va viroidlarga chidamlilik beradi",
     ],
     specs: [
-      { label: "N", value: "8%" },
-      { label: "P2O5", value: "8%" },
-      { label: "K2O", value: "8%" },
-      { label: "Ca", value: "1%" },
-      { label: "Amino Acid", value: "7%" },
-      { label: "Seaweed Extract", value: "2%" },
+      { label: "Yo'nalish", value: "Virus va viroid himoyasi" },
+      { label: "Tarkibi", value: "Organik" },
+      { label: "Kutish vaqti", value: "0 kun" },
+      { label: "pH", value: "Pasaytiradi va barqarorlashtiradi" },
+    ],
+    mediaSections: [
+      {
+        title: "Do / Posle",
+        image: ProtonBeforeAfter,
+      },
+      {
+        title: "Effekt Proton V-367",
+        image: ProtonEffect,
+      },
+    ],
+  },
+  {
+    slug: "medicine-6",
+    type: "medicine",
+    name: "FABIO",
+    image: HomeBacteria,
+    summary:
+      "100% tabiiy va organik mikrobli o'g'it bo'lib, tarkibida foydali bakteriyalar va qishloq xo'jaligida ishlatiladigan qo'ziqorinlar mavjud.",
+    description:
+      "FABIO mikrobli o'g'iti 100% tabiiy va organik mahsulot bo'lib, tarkibida foydali bakteriyalar va qishloq xo'jaligida ishlatiladigan qo'ziqorinlar mavjud.",
+    highlights: [
+      "100% tabiiy va organik mahsulot",
+      "Tarkibida foydali bakteriyalar mavjud",
+      "Qishloq xo'jaligida ishlatiladigan qo'ziqorinlar mavjud",
+    ],
+    specs: [
+      { label: "Mahsulot turi", value: "Mikrobli o'g'it" },
+      { label: "Tarkibi", value: "Tabiiy va organik" },
+      { label: "Asosi", value: "Foydali bakteriyalar" },
+      { label: "Qo'shimcha", value: "Qishloq xo'jaligi qo'ziqorinlari" },
+    ],
+    mediaSections: [
+      {
+        title: "FABIO qanday ishlaydi",
+        image: FabioInfoOne,
+      },
+      {
+        title: "FABIO mikroorganizmlari",
+        image: FabioInfoTwo,
+      },
     ],
   },
   {
@@ -309,7 +361,7 @@ export const medicineProducts: CatalogProduct[] = [
     summary:
       "Datis Rich Fertilizer K40 mahsulot rangini, qand miqdorini, yangiligini va tovarbopligini oshirishga yordam beradi.",
     description:
-      "Информация о продукте: Удобрение Datis Rich Fertilizer K40 придает продуктам грубую окраску, повышает содержание сахара, свежесть и товарность. Недостаток калия для растений обычно наблюдается на тяжелых и легких, а также на сухих почвах. К преимуществам калия относятся увеличение продолжительности жизни листьев, снижение транспирации растений, повышение устойчивости к водному стрессу и засолению, а также облегчение усвоения таких элементов, как железо, фосфор и микроэлементы. Калий эффективно влияет на пространственную структуру ферментов, контролируя их активность, и способствует повышению ферментативной активности, регулируя кислотность цитоплазмы. В состав этого удобрения в качестве хелатирующих агентов входят аминокислоты, которые стабилизируют образование комплексов с калием.",
+      "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕРґСѓРєС‚Рµ: РЈРґРѕР±СЂРµРЅРёРµ Datis Rich Fertilizer K40 РїСЂРёРґР°РµС‚ РїСЂРѕРґСѓРєС‚Р°Рј РіСЂСѓР±СѓСЋ РѕРєСЂР°СЃРєСѓ, РїРѕРІС‹С€Р°РµС‚ СЃРѕРґРµСЂР¶Р°РЅРёРµ СЃР°С…Р°СЂР°, СЃРІРµР¶РµСЃС‚СЊ Рё С‚РѕРІР°СЂРЅРѕСЃС‚СЊ. РќРµРґРѕСЃС‚Р°С‚РѕРє РєР°Р»РёСЏ РґР»СЏ СЂР°СЃС‚РµРЅРёР№ РѕР±С‹С‡РЅРѕ РЅР°Р±Р»СЋРґР°РµС‚СЃСЏ РЅР° С‚СЏР¶РµР»С‹С… Рё Р»РµРіРєРёС…, Р° С‚Р°РєР¶Рµ РЅР° СЃСѓС…РёС… РїРѕС‡РІР°С…. Рљ РїСЂРµРёРјСѓС‰РµСЃС‚РІР°Рј РєР°Р»РёСЏ РѕС‚РЅРѕСЃСЏС‚СЃСЏ СѓРІРµР»РёС‡РµРЅРёРµ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚Рё Р¶РёР·РЅРё Р»РёСЃС‚СЊРµРІ, СЃРЅРёР¶РµРЅРёРµ С‚СЂР°РЅСЃРїРёСЂР°С†РёРё СЂР°СЃС‚РµРЅРёР№, РїРѕРІС‹С€РµРЅРёРµ СѓСЃС‚РѕР№С‡РёРІРѕСЃС‚Рё Рє РІРѕРґРЅРѕРјСѓ СЃС‚СЂРµСЃСЃСѓ Рё Р·Р°СЃРѕР»РµРЅРёСЋ, Р° С‚Р°РєР¶Рµ РѕР±Р»РµРіС‡РµРЅРёРµ СѓСЃРІРѕРµРЅРёСЏ С‚Р°РєРёС… СЌР»РµРјРµРЅС‚РѕРІ, РєР°Рє Р¶РµР»РµР·Рѕ, С„РѕСЃС„РѕСЂ Рё РјРёРєСЂРѕСЌР»РµРјРµРЅС‚С‹. РљР°Р»РёР№ СЌС„С„РµРєС‚РёРІРЅРѕ РІР»РёСЏРµС‚ РЅР° РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµРЅРЅСѓСЋ СЃС‚СЂСѓРєС‚СѓСЂСѓ С„РµСЂРјРµРЅС‚РѕРІ, РєРѕРЅС‚СЂРѕР»РёСЂСѓСЏ РёС… Р°РєС‚РёРІРЅРѕСЃС‚СЊ, Рё СЃРїРѕСЃРѕР±СЃС‚РІСѓРµС‚ РїРѕРІС‹С€РµРЅРёСЋ С„РµСЂРјРµРЅС‚Р°С‚РёРІРЅРѕР№ Р°РєС‚РёРІРЅРѕСЃС‚Рё, СЂРµРіСѓР»РёСЂСѓСЏ РєРёСЃР»РѕС‚РЅРѕСЃС‚СЊ С†РёС‚РѕРїР»Р°Р·РјС‹. Р’ СЃРѕСЃС‚Р°РІ СЌС‚РѕРіРѕ СѓРґРѕР±СЂРµРЅРёСЏ РІ РєР°С‡РµСЃС‚РІРµ С…РµР»Р°С‚РёСЂСѓСЋС‰РёС… Р°РіРµРЅС‚РѕРІ РІС…РѕРґСЏС‚ Р°РјРёРЅРѕРєРёСЃР»РѕС‚С‹, РєРѕС‚РѕСЂС‹Рµ СЃС‚Р°Р±РёР»РёР·РёСЂСѓСЋС‚ РѕР±СЂР°Р·РѕРІР°РЅРёРµ РєРѕРјРїР»РµРєСЃРѕРІ СЃ РєР°Р»РёРµРј.",
     highlights: [
       "Meva shaklini yaxshilashga yordam beradi",
       "Meva rangini kuchaytiradi",
@@ -320,6 +372,56 @@ export const medicineProducts: CatalogProduct[] = [
       { label: "K40", value: "40%" },
       { label: "Yo'nalish", value: "Meva sifati" },
       { label: "Mahsulot turi", value: "Plant stimulant" },
+    ],
+  },
+  {
+    slug: "trap-roll",
+    type: "medicine",
+    name: "Roll Trap",
+    image: HomeTraps,
+    summary:
+      "Issiqxona, dala va omborlarda uchuvchi hasharotlarni samarali tutish uchun mo'ljallangan yopishqoq lenta.",
+    description:
+      "Roll Trap вЂ” bu issiqxona, dala va omborlarda ishlatiladigan yopishqoq lenta boвЂlib, uchuvchi hasharotlarni (masalan, oqkanot, trips, pashsha) samarali tutish uchun moвЂljallangan.",
+    highlights: [
+      "Oqkanot, trips va mayda uchuvchi zararkunandalarni samarali tutadi",
+      "Kimyoviy vositasiz ishlaydi",
+      "Ekologik xavfsiz",
+      "Oson oвЂrnatiladi",
+      "Uzoq muddat xizmat qiladi",
+      "Zararkunandalarni erta aniqlash imkonini beradi",
+    ],
+    specs: [
+      { label: "O'lchami", value: "30 sm x 100 metr" },
+      { label: "Ranglari", value: "Oq, Ko'k, Sariq" },
+      { label: "Material", value: "Kuchli yopishqoq sirt" },
+      { label: "Qo'llanilishi", value: "Issiqxona, bog', dala, ombor" },
+    ],
+  },
+  {
+    slug: "trap-board",
+    type: "medicine",
+    name: "Yopishqoq tuzoq plastina",
+    image: TrapBoard,
+    summary:
+      "Issiqxona, bog', dala va omborlarda uchuvchi zararkunandalarni aniqlash va tutish uchun ishlatiladigan yopishqoq plastina.",
+    description:
+      "Ushbu yopishqoq tuzoq plastina issiqxona, bog', dala va omborlarda uchuvchi zararkunandalarni aniqlash va tutish uchun ishlatiladi. Sariq rang hasharotlarni o'ziga jalb qiladi, yopishqoq qatlami esa ularni ushlab qoladi.",
+    highlights: [
+      "Oqkanot, trips, pashsha, mayda chivinlar va boshqa uchuvchi zararkunandalar uchun samarali",
+      "Kimyoviy vositasiz ishlaydi",
+      "O'simliklar uchun xavfsiz",
+      "Oson osib qo'yiladi",
+      "Namlik va quyosh ta'sirida uzoq muddat xizmat qiladi",
+      "Zararkunandalarni erta aniqlashga yordam beradi",
+    ],
+    specs: [
+      { label: "O'lchami", value: "30cm x 30cm" },
+      { label: "Rangi", value: "Sariq" },
+      { label: "Material", value: "Karton/plastina asos, yopishqoq qoplama" },
+      { label: "Qo'llanilishi", value: "Issiqxona, bog', dala, omborxona" },
+      { label: "Mahsulot turi", value: "Hasharot tutuvchi yopishqoq tuzoq" },
+      { label: "Qadoqlash", value: "1 dona / paket" },
     ],
   },
 ];

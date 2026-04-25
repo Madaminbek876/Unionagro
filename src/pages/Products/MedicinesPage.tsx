@@ -2,9 +2,34 @@ import Navbar from "@/components/Navbar/navbar";
 import { medicineProducts } from "@/data/catalog";
 import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const MedicinesPage = () => {
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("category");
+  const isBacteriaCategory = category === "bacteria";
+  const isTrapsCategory = category === "traps";
+  const defaultMedicineProducts = medicineProducts.filter(
+    (medicine) =>
+      !["trap-roll", "trap-board", "medicine-6", "proton-v367"].includes(
+        medicine.slug,
+      ),
+  );
+  const productsToShow = isBacteriaCategory
+    ? medicineProducts.filter((medicine) =>
+        ["proton-v367", "medicine-6", "medicine-7"].includes(medicine.slug),
+      )
+    : isTrapsCategory
+      ? medicineProducts.filter((medicine) =>
+          ["trap-roll", "trap-board"].includes(medicine.slug),
+        )
+      : defaultMedicineProducts;
+  const pageTitle = isBacteriaCategory
+    ? "Jonli bakteriyalar"
+    : isTrapsCategory
+      ? "Tuzoqlar"
+      : "Dorilar";
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
       <video
@@ -32,11 +57,11 @@ const MedicinesPage = () => {
           </Link>
 
           <h1 className="text-center text-3xl font-black tracking-wide text-white sm:text-5xl">
-            Dorilar
+            {pageTitle}
           </h1>
 
           <div className="mt-12 grid gap-x-20 gap-y-14 sm:mt-16 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3">
-            {medicineProducts.map((medicine) => (
+            {productsToShow.map((medicine) => (
               <CatalogCard
                 slug={medicine.slug}
                 key={medicine.name}

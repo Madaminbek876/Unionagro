@@ -174,6 +174,31 @@ const ProductDetailPage = () => {
             </div>
           </div>
 
+          {product.mediaSections?.length ? (
+            <div className="mt-8 space-y-6 sm:mt-10 sm:space-y-8">
+              {product.mediaSections.map((section) => (
+                <div
+                  key={section.title}
+                  className="overflow-hidden rounded-[24px] border border-white/14 bg-[#0b2a16]/72 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:rounded-[28px] sm:p-5"
+                >
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="h-1.5 w-12 rounded-full bg-[#FBC719]" />
+                    <h2 className="text-xl font-black text-white sm:text-2xl">
+                      {section.title}
+                    </h2>
+                  </div>
+                  <div className="overflow-hidden rounded-[20px] border-2 border-white/90 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.24)]">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : null}
+
           <div className="mt-8 flex flex-col gap-4 rounded-[22px] border border-white/12 bg-[#0b2a16]/70 p-4 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:rounded-[24px] sm:p-5">
             <div className="flex items-start gap-3 sm:items-center">
               <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#FBC719] text-[#196931]">
