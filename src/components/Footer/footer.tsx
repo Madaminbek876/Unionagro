@@ -14,7 +14,6 @@ import FooterBg from "@/assets/images/footer-bg.jpg";
 
 const navigation = [
   { icon: Home, label: "Bosh sahifa", href: "/" },
-  { icon: Sprout, label: "Biz haqimizda", href: "/#about" },
   { icon: PackageOpen, label: "Mahsulotlar", href: "/#products" },
   { icon: Phone, label: "Aloqa", href: "/#contact" },
 ];
@@ -25,7 +24,7 @@ const contacts = [
     label: "Manzil",
     value: "Xasanboy lag'moni, Hasanboy 2/2",
   },
-  { icon: Phone, label: "Telefon", value: "+998 90 123 45 67" },
+  { icon: Phone, label: "Telefon", value: "+998 99 300 67 65" },
   {
     icon: Globe2,
     label: "Sayt",

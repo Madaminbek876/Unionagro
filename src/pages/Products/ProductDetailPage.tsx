@@ -293,7 +293,7 @@ const ProductDetailPage = () => {
                     Telefon
                   </span>
                   <span className="break-words text-base font-black text-white sm:text-lg">
-                    +998 90 123 45 67
+                    +998 99 300 67 65
                   </span>
                 </span>
               </a>
