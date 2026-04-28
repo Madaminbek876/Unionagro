@@ -8,7 +8,6 @@ import {
   PackageOpen,
   Phone,
   Send,
-  Sprout,
 } from "lucide-react";
 import FooterBg from "@/assets/images/footer-bg.jpg";
 
