@@ -11,12 +11,13 @@ import FieldCarouselFour from "@/assets/images/field-carousel-4.jpg";
 import ArticleMelonChild from "@/assets/images/article-melon-child.jpg";
 import ArticleWatermelonField from "@/assets/images/article-watermelon-field.jpg";
 import ArticleTomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
-import ArticleTomatoRed from "@/assets/images/article-tomato-red.jpg";
+import ArticleHarvestCucumber from "@/assets/images/article-harvest-cucumber.jpg";
 import ArticleTomatoGreen from "@/assets/images/article-tomato-green.jpg";
 import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  ArrowUp,
   BadgeCheck,
   Leaf,
   PhoneCall,
@@ -69,10 +70,10 @@ const articles = [
     title: "Cherry pomidorlarda hosilni barqaror ushlab turish",
   },
   {
-    image: ArticleTomatoRed,
-    category: "Pomidor",
+    image: ArticleHarvestCucumber,
+    category: "Bodring",
     date: "2026",
-    title: "Qizil pomidor shodalarida yetilish nazorati",
+    title: "Bodring hosilini saralash va yig'ish nazorati",
   },
   {
     image: ArticleTomatoGreen,
@@ -98,6 +99,7 @@ const heroStats = [
 
 const HomePage = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [animatedStats, setAnimatedStats] = useState(() =>
     heroStats.map(() => 0),
   );
@@ -132,6 +134,21 @@ const HomePage = () => {
 
     return () => window.cancelAnimationFrame(animationFrameId);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 520);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#172c1d] text-white">
@@ -320,7 +337,7 @@ const HomePage = () => {
                   className="group relative overflow-hidden rounded-[30px] border border-white/14 bg-[linear-gradient(145deg,#154c1f_0%,#123d1b_55%,#295f1e_100%)] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-[#FBC719]/70 hover:bg-[linear-gradient(145deg,#185723_0%,#15461d_55%,#2f6a21_100%)]"
                 >
                   <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-[#FBC719]/10 blur-2xl transition group-hover:bg-[#FBC719]/20" />
-                  <div className="relative mb-5 grid h-13 w-13 place-items-center rounded-2xl border border-[#FBC719]/80 bg-[#FBC719]/12 text-[#FBC719]">
+                  <div className="relative mb-5 grid h-14 w-14 place-items-center rounded-[22px] border border-[#FBC719]/80 bg-[#FBC719]/12 text-[#FBC719] sm:h-16 sm:w-16">
                     <Icon size={24} />
                   </div>
                   <div className="relative mb-4 h-1 w-12 rounded-full bg-[#FBC719]" />
@@ -339,6 +356,19 @@ const HomePage = () => {
       </section>
 
       <Footer />
+
+      <button
+        type="button"
+        aria-label="Tepaga qaytish"
+        onClick={scrollToTop}
+        className={`fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#196931]/30 bg-[#FBC719] text-[#196931] shadow-[0_18px_40px_rgba(0,0,0,0.24)] transition duration-300 hover:scale-105 hover:bg-[#ffd24a] sm:bottom-7 sm:right-7 sm:h-16 sm:w-16 ${
+          showScrollTop
+            ? "pointer-events-auto translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-4 opacity-0"
+        }`}
+      >
+        <ArrowUp size={26} strokeWidth={2.6} />
+      </button>
     </main>
   );
 };

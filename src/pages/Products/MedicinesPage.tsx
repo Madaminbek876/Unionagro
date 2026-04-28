@@ -11,14 +11,20 @@ const MedicinesPage = () => {
   const isTrapsCategory = category === "traps";
   const defaultMedicineProducts = medicineProducts.filter(
     (medicine) =>
-      !["trap-roll", "trap-board", "medicine-6", "proton-v367"].includes(
+      !["trap-roll", "trap-board", "medicine-6", "medicine-7", "proton-v367", "bacteria-calcium-40"].includes(
         medicine.slug,
       ),
   );
+  const orderedBacteriaSlugs = [
+    "bacteria-calcium-40",
+    "medicine-6",
+    "medicine-7",
+    "proton-v367",
+  ];
   const productsToShow = isBacteriaCategory
-    ? medicineProducts.filter((medicine) =>
-        ["proton-v367", "medicine-6", "medicine-7"].includes(medicine.slug),
-      )
+    ? orderedBacteriaSlugs
+        .map((slug) => medicineProducts.find((medicine) => medicine.slug === slug))
+        .filter((medicine): medicine is NonNullable<typeof medicine> => Boolean(medicine))
     : isTrapsCategory
       ? medicineProducts.filter((medicine) =>
           ["trap-roll", "trap-board"].includes(medicine.slug),
@@ -67,6 +73,7 @@ const MedicinesPage = () => {
                 key={medicine.name}
                 name={medicine.name}
                 image={medicine.image}
+                category={category}
               />
             ))}
           </div>
@@ -80,17 +87,19 @@ type FlipCatalogCardProps = {
   slug: string;
   name: string;
   image: string;
+  category?: string | null;
 };
 
 const CatalogCard = ({
   slug,
   name,
   image,
+  category,
 }: FlipCatalogCardProps) => (
   <div className="group mx-auto w-full max-w-[320px] text-center sm:max-w-[260px]">
     <div className="transition duration-500 group-hover:-translate-y-2">
       <Link
-        to={`/medicine/${slug}`}
+        to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
         className="block h-[250px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)] outline-none sm:h-[268px]"
       >
         <img

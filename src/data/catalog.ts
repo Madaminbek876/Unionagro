@@ -3,19 +3,23 @@ import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
 import TomatoClose from "@/assets/images/article-tomato-close.jpg";
 import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
-import SeedsMix from "@/assets/images/blob.jpeg";
-import NutriLeaf from "@/assets/images/nutri-leaf.png";
+import Amino33PlusImage from "@/assets/images/amino-33-plus-new.jpg";
+import Humix70Image from "@/assets/images/humix-70-new.jpg";
 import ProtonV367 from "@/assets/images/proton-v367.jpg";
 import ProtonBeforeAfter from "@/assets/images/proton-before-after.jpg";
 import ProtonEffect from "@/assets/images/proton-effect.jpg";
 import FabioInfoOne from "@/assets/images/fabio-info-1.png";
 import FabioInfoTwo from "@/assets/images/fabio-info-2.png";
 import RadikaBase from "@/assets/images/radika-base.png";
-import VitalPlusCalcium from "@/assets/images/vital-plus-calcium.png";
+import VitalPlusCalcium from "@/assets/images/vital-plus-calcium-new.jpg";
 import HomeBacteria from "@/assets/images/home-bacteria.jpg";
+import BacteriaCalcium40 from "@/assets/images/bacteria-calcium-40.jpg";
+import OceanImage from "@/assets/images/medicine-6.jpg";
 import HomeTraps from "@/assets/images/home-traps.jpg";
 import TrapBoard from "@/assets/images/trap-board.jpg";
-import ZExtra from "@/assets/images/z-extra.png";
+import TrapRollDetailOne from "@/assets/images/trap-roll-detail-1.jpg";
+import TrapRollDetailTwo from "@/assets/images/trap-roll-detail-2.jpg";
+import NewDatisAllImage from "@/assets/images/new-datis-all-new.jpg";
 import MedicineSeven from "@/assets/images/medicine-7.jpg";
 
 export type CatalogType = "seed" | "medicine";
@@ -198,7 +202,7 @@ export const medicineProducts: CatalogProduct[] = [
     slug: "nutri-leaf",
     type: "medicine",
     name: "HUMIX-70",
-    image: NutriLeaf,
+    image: Humix70Image,
     summary:
       "Organik moddalarga boy mahsulot, oziqlantiruvchi moddalar nuqtai nazaridan oriq yer uchun a'lo ozuqa qo'shimchasi.",
     description:
@@ -234,7 +238,7 @@ export const medicineProducts: CatalogProduct[] = [
     slug: "z-extra",
     type: "medicine",
     name: "NEW DATIS ALL",
-    image: ZExtra,
+    image: NewDatisAllImage,
     summary:
       "Organik o'g'itlarga o'xshab, organik kislotalarning yuqori foizini saqlaydigan boy o'g'it.",
     description:
@@ -263,7 +267,7 @@ export const medicineProducts: CatalogProduct[] = [
     slug: "agro-balance",
     type: "medicine",
     name: "AMINO 33-plus Cal Mag",
-    image: SeedsMix,
+    image: Amino33PlusImage,
     summary:
       "O'simlikka mansub aminokislotalardan iborat, stressga chidamlilik va mahsulot sifatini oshirishga yordam beradi.",
     description:
@@ -286,6 +290,55 @@ export const medicineProducts: CatalogProduct[] = [
     ],
   },
   {
+    slug: "ocean",
+    type: "medicine",
+    name: "OCEAN",
+    image: OceanImage,
+    summary:
+      "Baliq va suv o'tlari ekstrakti asosida tayyorlangan, o'simlik oziqlanishi va stressga chidamliligini kuchaytiruvchi mahsulot.",
+    description:
+      "OCEAN baliq qoldiqlari va suv o'tlaridan olingan aminokislotalarga boy bo'lib, sabzavot, don va bog' ekinlari uchun zarur makro va mikroelementlarni saqlaydi. Mahsulot tuproqdagi foydali mikroorganizmlar faoliyatini qo'llab-quvvatlaydi, oziqlanishni yaxshilaydi va o'simlikning noqulay sharoitlarga chidamliligini oshirishga yordam beradi.",
+    highlights: [
+      "Mevalar hajmi va hosildorligini oshirishga yordam beradi",
+      "Sovuqqa va kasalliklarga chidamlilikni qo'llab-quvvatlaydi",
+      "Mineral moddalar o'zlashtirilishini oshiradi",
+      "Turli stresslarga qarshi kurashishda yordam beradi",
+      "Oziq moddalarning o'zlashtirilish darajasini yaxshilaydi",
+      "Mahsulot sifatini yaxshilashga ko'maklashadi",
+    ],
+    specs: [
+      { label: "N", value: "8%" },
+      { label: "P2O5", value: "8%" },
+      { label: "K2O", value: "8%" },
+      { label: "Amino / Seaweed", value: "7% / 2%" },
+    ],
+  },
+  {
+    slug: "bacteria-calcium-40",
+    type: "medicine",
+    name: "Datis Rich Fertilizer Calcium 40% SC",
+    image: BacteriaCalcium40,
+    summary:
+      "Suspenzion shakldagi suyuq o'g'it bo'lib, yuqori so'rilish va mahsulotga tez kirib borishni ta'minlaydi.",
+    description:
+      "Datis Rich Fertilizer Calcium 40% SC suyuq o'g'iti o'zining suspenzion shakli tufayli mayda zarrachalar diametriga ega bo'lib, bu eritmaning yuqori so'rilishini va mahsulotga kirishini ta'minlaydi. Zarrachalarning bir xil tuzilishi, chang hosil qilmasligi va to'liq aralashuvchanligi uni qo'llashda juda oson qiladi. O'g'it barg yuzasiga yaxshi purkaladi va bevosita o'simlik og'izchalari orqali so'riladi, bu esa fotosintez tezligini sezilarli darajada oshiradi. Bundan tashqari, bu o'g'it o'simliklar uchun zaharli emas, hosilning sifati va miqdorini yaxshilaydi, o'simliklarning o'sishi va hayotchanligini oshiradi, shuningdek, hosil yig'ib olingandan keyin mahsulotning mustahkamligi va chidamliligini oshiradi.",
+    highlights: [
+      "Mayda zarrachalari tufayli yuqori so'rilish beradi",
+      "Chang hosil qilmaydi va to'liq aralashadi",
+      "Barg yuzasiga yaxshi purkaladi",
+      "Fotosintez tezligini oshirishga yordam beradi",
+      "Hosil sifati va miqdorini yaxshilaydi",
+      "O'simlikning o'sishi va hayotchanligini oshiradi",
+      "Yig'imdan keyingi mustahkamlik va chidamlilikni kuchaytiradi",
+    ],
+    specs: [
+      { label: "Mahsulot turi", value: "Suyuq o'g'it" },
+      { label: "Shakli", value: "Suspenzion" },
+      { label: "Ta'siri", value: "Yuqori so'rilish" },
+      { label: "Afzalligi", value: "Fotosintezni tezlashtiradi" },
+    ],
+  },
+  {
     slug: "proton-v367",
     type: "medicine",
     name: "Proton V-367",
@@ -293,17 +346,17 @@ export const medicineProducts: CatalogProduct[] = [
     summary:
       "Viruslar va viroidlarga qarshi yuqori barqarorlikni ta'minlovchi maxsus preparat.",
     description:
-      "Proton V-367 - oвЂsimliklarni viruslar va viroidlarga qarshi yuqori barqarorlik bilan himoya qilishga yordam beruvchi maxsus preparat. U virusning yuqishida faol rol oвЂynaydigan proteaza fermentini ingibirlaydi va past chidamlilik davrlarida yuzaga keladigan immunitet susayishini kamaytirishga yordam beradi. Organik tarkibga ega, eksportda qoldiq bilan bogвЂliq muammolar keltirib chiqarmaydi, asalarilar uchun zararsiz va kutish vaqti 0 kun. Preparat pH ni pasaytiruvchi va barqarorlashtiruvchi xususiyatlarga ham ega.",
+      "Proton V-367 o'simliklarni viruslar va viroidlarga qarshi yuqori barqarorlik bilan himoya qilishga yordam beruvchi maxsus preparatdir. U virusning yuqishida faol rol o'ynaydigan proteaza fermentini ingibirlaydi va past chidamlilik davrlarida yuzaga keladigan immunitet susayishini kamaytirishga yordam beradi. Organik tarkibga ega, eksportda qoldiq bilan bog'liq muammolar keltirib chiqarmaydi, asalarilar uchun zararsiz va kutish vaqti 0 kun. Preparat pH ni pasaytiruvchi va barqarorlashtiruvchi xususiyatlarga ham ega.",
     highlights: [
-      "Virusning yuqishida faol rol oвЂynaydigan proteaza fermentini ingibirlaydi",
+      "Virusning yuqishida faol rol o'ynaydigan proteaza fermentini ingibirlaydi",
       "Organik tarkibga ega",
-      "Eksport qilishda qoldiqlar bilan bogвЂliq muammolar yuzaga kelmaydi",
+      "Eksport qilishda qoldiqlar bilan bog'liq muammolar yuzaga kelmaydi",
       "Asalarilar uchun zararsiz, kutish vaqti 0 kun",
-      "Qoldiqlar bilan bogвЂliq muammolar keltirib chiqarmaydi",
+      "Qoldiqlar bilan bog'liq muammolar keltirib chiqarmaydi",
       "pH ni pasaytiruvchi va barqarorlashtiruvchi xususiyatlarga ega",
-      "OвЂsimliklarning pH va ishqoriy muvozanatini boshqaradi",
-      "OвЂsimliklarning fiziologik rivojlanishiga yordam beradi",
-      "OвЂsimliklarga viruslar va viroidlarga chidamlilik beradi",
+      "O'simliklarning pH va ishqoriy muvozanatini boshqaradi",
+      "O'simliklarning fiziologik rivojlanishiga yordam beradi",
+      "O'simliklarga viruslar va viroidlarga chidamlilik beradi",
     ],
     specs: [
       { label: "Yo'nalish", value: "Virus va viroid himoyasi" },
@@ -361,7 +414,7 @@ export const medicineProducts: CatalogProduct[] = [
     summary:
       "Datis Rich Fertilizer K40 mahsulot rangini, qand miqdorini, yangiligini va tovarbopligini oshirishga yordam beradi.",
     description:
-      "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕРґСѓРєС‚Рµ: РЈРґРѕР±СЂРµРЅРёРµ Datis Rich Fertilizer K40 РїСЂРёРґР°РµС‚ РїСЂРѕРґСѓРєС‚Р°Рј РіСЂСѓР±СѓСЋ РѕРєСЂР°СЃРєСѓ, РїРѕРІС‹С€Р°РµС‚ СЃРѕРґРµСЂР¶Р°РЅРёРµ СЃР°С…Р°СЂР°, СЃРІРµР¶РµСЃС‚СЊ Рё С‚РѕРІР°СЂРЅРѕСЃС‚СЊ. РќРµРґРѕСЃС‚Р°С‚РѕРє РєР°Р»РёСЏ РґР»СЏ СЂР°СЃС‚РµРЅРёР№ РѕР±С‹С‡РЅРѕ РЅР°Р±Р»СЋРґР°РµС‚СЃСЏ РЅР° С‚СЏР¶РµР»С‹С… Рё Р»РµРіРєРёС…, Р° С‚Р°РєР¶Рµ РЅР° СЃСѓС…РёС… РїРѕС‡РІР°С…. Рљ РїСЂРµРёРјСѓС‰РµСЃС‚РІР°Рј РєР°Р»РёСЏ РѕС‚РЅРѕСЃСЏС‚СЃСЏ СѓРІРµР»РёС‡РµРЅРёРµ РїСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚Рё Р¶РёР·РЅРё Р»РёСЃС‚СЊРµРІ, СЃРЅРёР¶РµРЅРёРµ С‚СЂР°РЅСЃРїРёСЂР°С†РёРё СЂР°СЃС‚РµРЅРёР№, РїРѕРІС‹С€РµРЅРёРµ СѓСЃС‚РѕР№С‡РёРІРѕСЃС‚Рё Рє РІРѕРґРЅРѕРјСѓ СЃС‚СЂРµСЃСЃСѓ Рё Р·Р°СЃРѕР»РµРЅРёСЋ, Р° С‚Р°РєР¶Рµ РѕР±Р»РµРіС‡РµРЅРёРµ СѓСЃРІРѕРµРЅРёСЏ С‚Р°РєРёС… СЌР»РµРјРµРЅС‚РѕРІ, РєР°Рє Р¶РµР»РµР·Рѕ, С„РѕСЃС„РѕСЂ Рё РјРёРєСЂРѕСЌР»РµРјРµРЅС‚С‹. РљР°Р»РёР№ СЌС„С„РµРєС‚РёРІРЅРѕ РІР»РёСЏРµС‚ РЅР° РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµРЅРЅСѓСЋ СЃС‚СЂСѓРєС‚СѓСЂСѓ С„РµСЂРјРµРЅС‚РѕРІ, РєРѕРЅС‚СЂРѕР»РёСЂСѓСЏ РёС… Р°РєС‚РёРІРЅРѕСЃС‚СЊ, Рё СЃРїРѕСЃРѕР±СЃС‚РІСѓРµС‚ РїРѕРІС‹С€РµРЅРёСЋ С„РµСЂРјРµРЅС‚Р°С‚РёРІРЅРѕР№ Р°РєС‚РёРІРЅРѕСЃС‚Рё, СЂРµРіСѓР»РёСЂСѓСЏ РєРёСЃР»РѕС‚РЅРѕСЃС‚СЊ С†РёС‚РѕРїР»Р°Р·РјС‹. Р’ СЃРѕСЃС‚Р°РІ СЌС‚РѕРіРѕ СѓРґРѕР±СЂРµРЅРёСЏ РІ РєР°С‡РµСЃС‚РІРµ С…РµР»Р°С‚РёСЂСѓСЋС‰РёС… Р°РіРµРЅС‚РѕРІ РІС…РѕРґСЏС‚ Р°РјРёРЅРѕРєРёСЃР»РѕС‚С‹, РєРѕС‚РѕСЂС‹Рµ СЃС‚Р°Р±РёР»РёР·РёСЂСѓСЋС‚ РѕР±СЂР°Р·РѕРІР°РЅРёРµ РєРѕРјРїР»РµРєСЃРѕРІ СЃ РєР°Р»РёРµРј.",
+      "Datis Rich Fertilizer K40 mevaning rangini kuchaytiradi, qand miqdorini oshiradi, yangiligini saqlashga va mahsulotning tovarbop ko'rinishini yaxshilashga yordam beradi. Kaliy tanqisligi ko'pincha og'ir, yengil va quruq tuproqlarda kuzatiladi. Ushbu mahsulot barglarning yashash davomiyligini uzaytirishga, transpiratsiyani kamaytirishga, o'simlikning suv tanqisligi va sho'rlanishga chidamliligini oshirishga yordam beradi. Shuningdek, temir, fosfor va mikroelementlarning o'zlashtirilishini yaxshilaydi. Tarkibidagi aminokislotalar kaliy bilan kompleks hosil bo'lishini barqarorlashtirib, mahsulot samaradorligini oshiradi.",
     highlights: [
       "Meva shaklini yaxshilashga yordam beradi",
       "Meva rangini kuchaytiradi",
@@ -382,12 +435,12 @@ export const medicineProducts: CatalogProduct[] = [
     summary:
       "Issiqxona, dala va omborlarda uchuvchi hasharotlarni samarali tutish uchun mo'ljallangan yopishqoq lenta.",
     description:
-      "Roll Trap вЂ” bu issiqxona, dala va omborlarda ishlatiladigan yopishqoq lenta boвЂlib, uchuvchi hasharotlarni (masalan, oqkanot, trips, pashsha) samarali tutish uchun moвЂljallangan.",
+      "Roll Trap issiqxona, dala va omborlarda ishlatiladigan yopishqoq lenta bo'lib, uchuvchi hasharotlarni, masalan oqkanot, trips va pashshani samarali tutish uchun mo'ljallangan.",
     highlights: [
       "Oqkanot, trips va mayda uchuvchi zararkunandalarni samarali tutadi",
       "Kimyoviy vositasiz ishlaydi",
       "Ekologik xavfsiz",
-      "Oson oвЂrnatiladi",
+      "Oson o'rnatiladi",
       "Uzoq muddat xizmat qiladi",
       "Zararkunandalarni erta aniqlash imkonini beradi",
     ],
@@ -396,6 +449,16 @@ export const medicineProducts: CatalogProduct[] = [
       { label: "Ranglari", value: "Oq, Ko'k, Sariq" },
       { label: "Material", value: "Kuchli yopishqoq sirt" },
       { label: "Qo'llanilishi", value: "Issiqxona, bog', dala, ombor" },
+    ],
+    mediaSections: [
+      {
+        title: "Roll Trap natijasi",
+        image: TrapRollDetailOne,
+      },
+      {
+        title: "Issiqxona kuzatuvi",
+        image: TrapRollDetailTwo,
+      },
     ],
   },
   {

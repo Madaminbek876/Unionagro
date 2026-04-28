@@ -13,10 +13,11 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 const ProductDetailPage = () => {
   const { slug } = useParams();
+  const [searchParams] = useSearchParams();
   const product = getCatalogProduct(slug);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
@@ -58,9 +59,31 @@ const ProductDetailPage = () => {
     );
   }
 
-  const backPath = product.type === "seed" ? "/product" : "/medicine";
-  const sectionTitle = product.type === "seed" ? "Urug'lar" : "Dorilar";
-  const SectionIcon = product.type === "seed" ? Sprout : PackageCheck;
+  const category = searchParams.get("category");
+  const isBacteriaCategory = category === "bacteria";
+  const isTrapsCategory = category === "traps";
+  const backPath =
+    product.type === "seed"
+      ? "/product"
+      : isBacteriaCategory
+        ? "/medicine?category=bacteria"
+        : isTrapsCategory
+          ? "/medicine?category=traps"
+          : "/medicine";
+  const sectionTitle =
+    product.type === "seed"
+      ? "Urug'lar"
+      : isBacteriaCategory
+        ? "Jonli bakteriyalar"
+        : isTrapsCategory
+          ? "Tuzoqlar"
+          : "Dorilar";
+  const SectionIcon =
+    product.type === "seed"
+      ? Sprout
+      : isBacteriaCategory
+        ? Leaf
+        : PackageCheck;
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
@@ -187,11 +210,11 @@ const ProductDetailPage = () => {
                       {section.title}
                     </h2>
                   </div>
-                  <div className="overflow-hidden rounded-[20px] border-2 border-white/90 bg-white shadow-[0_18px_50px_rgba(0,0,0,0.24)]">
+                  <div className="overflow-hidden rounded-[20px] border-2 border-white/90 bg-white p-3 shadow-[0_18px_50px_rgba(0,0,0,0.24)] sm:p-4">
                     <img
                       src={section.image}
                       alt={section.title}
-                      className="h-full w-full object-cover"
+                      className="mx-auto max-h-[440px] w-full object-contain bg-white"
                     />
                   </div>
                 </div>
@@ -199,16 +222,16 @@ const ProductDetailPage = () => {
             </div>
           ) : null}
 
-          <div className="mt-8 flex flex-col gap-4 rounded-[22px] border border-white/12 bg-[#0b2a16]/70 p-4 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:rounded-[24px] sm:p-5">
-            <div className="flex items-start gap-3 sm:items-center">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#FBC719] text-[#196931]">
-                <BadgeCheck size={23} />
+          <div className="mt-8 flex flex-col gap-4 rounded-[24px] border border-white/12 bg-[#0b2a16]/70 p-5 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:rounded-[24px] sm:p-5">
+            <div className="flex items-start gap-4 sm:items-center">
+              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-[20px] bg-[#FBC719] text-[#196931] sm:h-11 sm:w-11 sm:rounded-2xl">
+                <BadgeCheck size={26} className="sm:h-[23px] sm:w-[23px]" />
               </span>
               <div className="min-w-0">
-                <p className="text-lg font-black text-white">
+                <p className="text-[1.35rem] font-black leading-none text-white sm:text-lg">
                   Union Agro tavsiyasi
                 </p>
-                <p className="text-sm font-semibold text-white/62">
+                <p className="mt-2 text-[15px] font-semibold leading-6 text-white/62 sm:mt-0 sm:text-sm sm:leading-normal">
                   Mahsulotni qo'llashdan oldin ekin turi va mavsum sharoitini
                   aniqlashtiring.
                 </p>
@@ -218,7 +241,7 @@ const ProductDetailPage = () => {
             <button
               type="button"
               onClick={() => setIsContactDialogOpen(true)}
-              className="inline-flex w-full items-center justify-center rounded-full bg-[#FBC719] px-6 py-3 text-sm font-black text-[#196931] transition hover:bg-white sm:w-auto"
+              className="inline-flex min-h-14 w-full items-center justify-center rounded-full bg-[#FBC719] px-6 py-3.5 text-base font-black text-[#196931] transition hover:bg-white sm:min-h-0 sm:w-auto sm:py-3 sm:text-sm"
             >
               Maslahat olish
             </button>
