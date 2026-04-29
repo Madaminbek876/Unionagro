@@ -360,22 +360,30 @@ const ProductDetailPage = () => {
             </p>
 
             <div className="mt-6 grid gap-3">
-              <a
-                href="tel:+998901234567"
-                className="group flex items-center gap-3 rounded-[20px] border border-white/12 bg-white/[0.08] p-4 transition hover:-translate-y-0.5 hover:border-[#FBC719]/70 hover:bg-[#196931]/70 sm:gap-4"
-              >
+              <div className="flex items-center gap-3 rounded-[20px] border border-white/12 bg-white/[0.08] p-4 transition hover:-translate-y-0.5 hover:border-[#FBC719]/70 hover:bg-[#196931]/70 sm:gap-4">
                 <span className="grid h-12 w-12 place-items-center rounded-2xl border border-[#FBC719]/70 bg-[#FBC719]/12 text-[#FBC719] transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
                   <PhoneCall size={22} />
                 </span>
-                <span>
+                <span className="min-w-0 flex-1">
                   <span className="block text-xs font-black uppercase tracking-[0.18em] text-white/50">
                     Telefon
                   </span>
-                  <span className="break-words text-base font-black text-white sm:text-lg">
-                    +998 99 300 67 65
+                  <span className="mt-1 grid gap-1">
+                    <a
+                      href="tel:+998993006765"
+                      className="block break-words text-base font-black leading-tight text-white transition hover:text-[#FBC719] sm:text-lg"
+                    >
+                      +998 99 300 67 65
+                    </a>
+                    <a
+                      href="tel:+998998820012"
+                      className="block break-words text-base font-black leading-tight text-white transition hover:text-[#FBC719] sm:text-lg"
+                    >
+                      +998 99 882 00 12
+                    </a>
                   </span>
                 </span>
-              </a>
+              </div>
 
               <a
                 href="https://t.me/Narim0nov"

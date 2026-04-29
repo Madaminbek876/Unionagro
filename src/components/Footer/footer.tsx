@@ -14,7 +14,6 @@ import FooterBg from "@/assets/images/footer-bg.jpg";
 const navigation = [
   { icon: Home, label: "Bosh sahifa", href: "/" },
   { icon: PackageOpen, label: "Mahsulotlar", href: "/#products" },
-  { icon: Phone, label: "Aloqa", href: "/#contact" },
 ];
 
 const contacts = [
@@ -30,6 +29,11 @@ const contacts = [
     value: "greenvillage.uz",
     href: "https://greenvillage.uz/",
   },
+];
+
+const phoneNumbers = [
+  { label: "+998 99 300 67 65", href: "tel:+998993006765" },
+  { label: "+998 99 882 00 12", href: "tel:+998998820012" },
 ];
 
 const Footer = () => {
@@ -112,6 +116,18 @@ const Footer = () => {
                       >
                         {item.value}
                       </a>
+                    ) : item.label === "Telefon" ? (
+                      <span className="mt-1 grid gap-1">
+                        {phoneNumbers.map((phone) => (
+                          <a
+                            key={phone.href}
+                            href={phone.href}
+                            className="block break-words text-base font-black leading-tight transition hover:text-[#FBC719] sm:text-lg"
+                          >
+                            {phone.label}
+                          </a>
+                        ))}
+                      </span>
                     ) : (
                       <span className="whitespace-pre-line break-words text-base font-black sm:text-lg">
                         {item.value}
