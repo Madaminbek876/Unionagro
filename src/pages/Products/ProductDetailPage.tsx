@@ -12,7 +12,7 @@ import {
   Sprout,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
 const ProductDetailPage = () => {
@@ -20,6 +20,28 @@ const ProductDetailPage = () => {
   const [searchParams] = useSearchParams();
   const product = getCatalogProduct(slug);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [activeProductSlide, setActiveProductSlide] = useState(0);
+  const productSlides = product?.images?.length
+    ? product.images
+    : product
+      ? [product.image]
+      : [];
+
+  useEffect(() => {
+    setActiveProductSlide(0);
+  }, [product?.slug]);
+
+  useEffect(() => {
+    if (productSlides.length < 2) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveProductSlide((current) => (current + 1) % productSlides.length);
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [productSlides.length]);
 
   if (!product) {
     return (
@@ -147,17 +169,37 @@ const ProductDetailPage = () => {
 
             <div className="relative">
               <div className="absolute -right-3 -top-4 h-24 w-24 rounded-full border border-[#FBC719]/40 bg-[#FBC719]/18 blur-2xl sm:-right-6 sm:-top-6 sm:h-36 sm:w-36" />
-              <div className="relative overflow-hidden rounded-[22px] border-4 border-white bg-white shadow-[0_34px_90px_rgba(0,0,0,0.36)] sm:rounded-[28px]">
-                <div className="aspect-[1.05/1] overflow-hidden bg-[#123d21] sm:aspect-[1.12/1]">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className={`h-full w-full ${
-                      product.type === "medicine"
-                        ? "object-contain p-4"
-                        : "object-cover"
-                    }`}
-                  />
+              <div className="relative overflow-hidden rounded-[22px] border-4 border-[#FBC719] bg-[#123d21] shadow-[0_34px_90px_rgba(0,0,0,0.36)] sm:rounded-[28px]">
+                <div className="relative aspect-[1.05/1] overflow-hidden bg-[#123d21] sm:aspect-[1.12/1]">
+                  {productSlides.map((slide, index) => (
+                    <img
+                      key={slide}
+                      src={slide}
+                      alt={product.name}
+                      className={`absolute inset-0 h-full w-full object-cover transition duration-700 ${
+                        index === activeProductSlide
+                          ? "scale-100 opacity-100"
+                          : "scale-105 opacity-0"
+                      }`}
+                    />
+                  ))}
+                  {productSlides.length > 1 ? (
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                      {productSlides.map((slide, index) => (
+                        <button
+                          key={slide}
+                          type="button"
+                          aria-label={`${product.name} rasm ${index + 1}`}
+                          onClick={() => setActiveProductSlide(index)}
+                          className={`h-3 rounded-full border border-white/40 transition ${
+                            index === activeProductSlide
+                              ? "w-8 bg-[#FBC719]"
+                              : "w-3 bg-white/70"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>

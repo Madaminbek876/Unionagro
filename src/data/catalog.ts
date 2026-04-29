@@ -1,8 +1,31 @@
 ﻿import WatermelonField from "@/assets/images/article-watermelon-field.jpg";
 import TomatoCherry from "@/assets/images/article-tomato-cherry.jpg";
+import LabelaF1SingleField from "@/assets/images/labela-f1-single-field.jpg";
+import LabelaF1CutOpen from "@/assets/images/labela-f1-cut-open.jpg";
+import LabelaF1TwoField from "@/assets/images/labela-f1-two-field.jpg";
+import LabelaF1CloseField from "@/assets/images/labela-f1-close-field.jpg";
+import CherryTT10HeavyChain from "@/assets/images/cherry-tt10-heavy-chain.jpg";
+import CherryTT10RedChain from "@/assets/images/cherry-tt10-red-chain.jpg";
+import CherryTT10ColorChain from "@/assets/images/cherry-tt10-color-chain.jpg";
+import CherryTT10LongChain from "@/assets/images/cherry-tt10-long-chain.jpg";
 import TomatoClose from "@/assets/images/article-tomato-close.jpg";
+import AishaF1GreenhouseRow from "@/assets/images/aisha-f1-greenhouse-row.jpg";
+import AishaF1HandCluster from "@/assets/images/aisha-f1-hand-cluster.jpg";
+import AishaF1GreenCluster from "@/assets/images/aisha-f1-green-cluster.jpg";
+import AishaF1HeavyCluster from "@/assets/images/aisha-f1-heavy-cluster.jpg";
+import AishaF1RipeCluster from "@/assets/images/aisha-f1-ripe-cluster.jpg";
 import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
+import LaserF1HarvestBox from "@/assets/images/laser-f1-harvest-box.jpg";
+import LaserF1Lineup from "@/assets/images/laser-f1-lineup.jpeg";
+import LaserF1Crates from "@/assets/images/laser-f1-crates.jpg";
+import LaserF1BagsClose from "@/assets/images/laser-f1-bags-close.jpg";
+import LaserF1PackedBags from "@/assets/images/laser-f1-packed-bags.jpg";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
+import ZumraF1FieldStack from "@/assets/images/zumra-f1-field-stack.jpg";
+import ZumraF1Sliced from "@/assets/images/zumra-f1-sliced.jpg";
+import ZumraF1Label from "@/assets/images/zumra-f1-label.jpg";
+import ZumraF1YellowStack from "@/assets/images/zumra-f1-yellow-stack.jpeg";
+import ZumraF1HarvestField from "@/assets/images/zumra-f1-harvest-field.jpeg";
 import Amino33PlusImage from "@/assets/images/amino-33-plus-new.jpg";
 import Humix70Image from "@/assets/images/humix-70-new.jpg";
 import ProtonV367 from "@/assets/images/proton-v367.jpg";
@@ -11,6 +34,10 @@ import ProtonEffect from "@/assets/images/proton-effect.jpg";
 import FabioInfoOne from "@/assets/images/fabio-info-1.png";
 import FabioInfoTwo from "@/assets/images/fabio-info-2.png";
 import RadikaBase from "@/assets/images/radika-base.png";
+import RadikaBaseCanisterCity from "@/assets/images/radika-base-canister-city.jpg";
+import RadikaBaseGreenhouseBottle from "@/assets/images/radika-base-greenhouse-bottle.jpg";
+import RadikaBaseRootsHand from "@/assets/images/radika-base-roots-hand.jpg";
+import RadikaBaseRootTray from "@/assets/images/radika-base-root-tray.jpg";
 import VitalPlusCalcium from "@/assets/images/vital-plus-calcium-new.jpg";
 import HomeBacteria from "@/assets/images/home-bacteria.jpg";
 import BacteriaCalcium40 from "@/assets/images/bacteria-calcium-40.jpg";
@@ -29,6 +56,7 @@ export type CatalogProduct = {
   type: CatalogType;
   name: string;
   image: string;
+  images?: string[];
   summary: string;
   description: string;
   highlights: string[];
@@ -48,6 +76,13 @@ export const seedProducts: CatalogProduct[] = [
     type: "seed",
     name: "Labela F1",
     image: WatermelonField,
+    images: [
+      WatermelonField,
+      LabelaF1SingleField,
+      LabelaF1CutOpen,
+      LabelaF1TwoField,
+      LabelaF1CloseField,
+    ],
     summary:
       "Erta pishar tarvuz navi. Yirik meva, kuchli ildiz va yaxshi tashishga chidamlilik bilan ajralib turadi.",
     description:
@@ -68,6 +103,13 @@ export const seedProducts: CatalogProduct[] = [
     type: "seed",
     name: "Cherry TT-10 F1",
     image: TomatoCherry,
+    images: [
+      TomatoCherry,
+      CherryTT10HeavyChain,
+      CherryTT10RedChain,
+      CherryTT10ColorChain,
+      CherryTT10LongChain,
+    ],
     summary:
       "Issiqxona uchun serhosil cherry pomidor. Bir tekis shoda, yorqin rang va bozorbop ko'rinish beradi.",
     description:
@@ -88,6 +130,14 @@ export const seedProducts: CatalogProduct[] = [
     type: "seed",
     name: "Aisha F1",
     image: TomatoClose,
+    images: [
+      TomatoClose,
+      AishaF1GreenhouseRow,
+      AishaF1HandCluster,
+      AishaF1GreenCluster,
+      AishaF1HeavyCluster,
+      AishaF1RipeCluster,
+    ],
     summary:
       "Pomidor navi kuchli o'sadi, kasallikka chidamliligi yaxshi va uzoq hosil davriga mos.",
     description:
@@ -108,6 +158,14 @@ export const seedProducts: CatalogProduct[] = [
     type: "seed",
     name: "Laser F1",
     image: LaserF1Cucumber,
+    images: [
+      LaserF1Cucumber,
+      LaserF1HarvestBox,
+      LaserF1Lineup,
+      LaserF1Crates,
+      LaserF1BagsClose,
+      LaserF1PackedBags,
+    ],
     summary:
       "Bodring urug'i issiqxona va ochiq maydon uchun mos. Mevasi silliq, hosildorligi barqaror.",
     description:
@@ -128,6 +186,14 @@ export const seedProducts: CatalogProduct[] = [
     type: "seed",
     name: "Zumra F1",
     image: ZumraF1Melon,
+    images: [
+      ZumraF1Melon,
+      ZumraF1FieldStack,
+      ZumraF1Sliced,
+      ZumraF1Label,
+      ZumraF1YellowStack,
+      ZumraF1HarvestField,
+    ],
     summary:
       "Qovun urug'i shirin ta'm, zich et va bir xil meva shakli uchun tanlanadi.",
     description:
@@ -174,6 +240,13 @@ export const medicineProducts: CatalogProduct[] = [
     type: "medicine",
     name: "RADIKA BASE",
     image: RadikaBase,
+    images: [
+      RadikaBase,
+      RadikaBaseCanisterCity,
+      RadikaBaseGreenhouseBottle,
+      RadikaBaseRootsHand,
+      RadikaBaseRootTray,
+    ],
     summary:
       "O'simlik ildizlarini kattalashtirish va rivojlantirish, er va suvda pH miqdorini kamaytirish uchun samarali o'g'it.",
     description:

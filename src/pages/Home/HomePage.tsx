@@ -165,7 +165,7 @@ const HomePage = () => {
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-4 py-2 text-xs font-bold text-[#FBC719] backdrop-blur-xl sm:text-sm">
               <Leaf size={17} />
-              <span>Ishonchli hosil daromadingiz manbaidir</span>
+              <span>Sifatli hosil daromadingiz manbaidir</span>
             </div>
             <h1 className="max-w-3xl text-3xl font-black leading-[1.08] text-white sm:text-5xl lg:text-6xl">
               Unionagro bilan

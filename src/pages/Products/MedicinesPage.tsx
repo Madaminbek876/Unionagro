@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar/navbar";
 import { medicineProducts } from "@/data/catalog";
 import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import { ArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const MedicinesPage = () => {
@@ -73,6 +74,7 @@ const MedicinesPage = () => {
                 key={medicine.name}
                 name={medicine.name}
                 image={medicine.image}
+                images={medicine.images}
                 category={category}
               />
             ))}
@@ -87,6 +89,7 @@ type FlipCatalogCardProps = {
   slug: string;
   name: string;
   image: string;
+  images?: string[];
   category?: string | null;
 };
 
@@ -94,25 +97,62 @@ const CatalogCard = ({
   slug,
   name,
   image,
+  images,
   category,
-}: FlipCatalogCardProps) => (
-  <div className="group mx-auto w-full max-w-[320px] text-center sm:max-w-[260px]">
-    <div className="transition duration-500 group-hover:-translate-y-2">
-      <Link
-        to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
-        className="block h-[250px] overflow-hidden rounded-[14px] border-4 border-white bg-white shadow-[0_18px_42px_rgba(0,0,0,0.32)] outline-none sm:h-[268px]"
-      >
-        <img
-          src={image}
-          alt={name}
-          className="h-full w-full object-contain p-3 transition duration-700 group-hover:scale-105"
-        />
-      </Link>
-      <h2 className="mx-auto mt-4 w-fit max-w-full rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
-        {name}
-      </h2>
+}: FlipCatalogCardProps) => {
+  const slides = images?.length ? images : [image];
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (slides.length < 2) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 3000);
+
+    return () => window.clearInterval(intervalId);
+  }, [slides.length]);
+
+  return (
+    <div className="group mx-auto w-full max-w-[320px] text-center sm:max-w-[260px]">
+      <div className="transition duration-500 group-hover:-translate-y-2">
+        <Link
+          to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
+          className="relative block h-[250px] overflow-hidden rounded-[14px] border-4 border-[#FBC719] bg-[#123d21] shadow-[0_18px_42px_rgba(0,0,0,0.32)] outline-none sm:h-[268px]"
+        >
+          {slides.map((slide, index) => (
+            <img
+              key={slide}
+              src={slide}
+              alt={name}
+              className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${
+                index === activeSlide ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          {slides.length > 1 ? (
+            <span className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+              {slides.map((slide, index) => (
+                <span
+                  key={slide}
+                  className={`h-2 rounded-full transition ${
+                    index === activeSlide
+                      ? "w-5 bg-[#FBC719]"
+                      : "w-2 bg-[#196931]/45"
+                  }`}
+                />
+              ))}
+            </span>
+          ) : null}
+        </Link>
+        <h2 className="mx-auto mt-4 w-fit max-w-full rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
+          {name}
+        </h2>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default MedicinesPage;
