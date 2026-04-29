@@ -39,13 +39,26 @@ import RadikaBaseGreenhouseBottle from "@/assets/images/radika-base-greenhouse-b
 import RadikaBaseRootsHand from "@/assets/images/radika-base-roots-hand.jpg";
 import RadikaBaseRootTray from "@/assets/images/radika-base-root-tray.jpg";
 import VitalPlusCalcium from "@/assets/images/vital-plus-calcium-new.jpg";
+import VitalPlusCalciumSlideOne from "@/assets/images/home-nutrition-slide-1.jpg";
+import VitalPlusCalciumSlideTwo from "@/assets/images/home-nutrition-slide-2.jpg";
+import VitalPlusCalciumSlideThree from "@/assets/images/home-nutrition-slide-3.jpg";
 import HomeBacteria from "@/assets/images/home-bacteria.jpg";
 import BacteriaCalcium40 from "@/assets/images/bacteria-calcium-40.jpg";
+import BacteriaCalciumSlideOne from "@/assets/images/bacteria-calcium-slide-1.jpg";
 import OceanImage from "@/assets/images/medicine-6.jpg";
 import HomeTraps from "@/assets/images/home-traps.jpg";
 import TrapBoard from "@/assets/images/trap-board.jpg";
 import TrapRollDetailOne from "@/assets/images/trap-roll-detail-1.jpg";
 import TrapRollDetailTwo from "@/assets/images/trap-roll-detail-2.jpg";
+import RollTrapSlideOne from "@/assets/images/roll-trap-slide-1.jpg";
+import RollTrapSlideTwo from "@/assets/images/roll-trap-slide-2.jpg";
+import RollTrapSlideThree from "@/assets/images/roll-trap-slide-3.jpg";
+import RollTrapSlideFour from "@/assets/images/roll-trap-slide-4.jpg";
+import TrapBoardSlideOne from "@/assets/images/trap-board-slide-1.jpg";
+import TrapBoardSlideTwo from "@/assets/images/trap-board-slide-2.jpg";
+import TrapBoardSlideThree from "@/assets/images/trap-board-slide-3.jpg";
+import TrapBoardSlideFour from "@/assets/images/trap-board-slide-4.jpg";
+import TrapBoardSlideFive from "@/assets/images/trap-board-slide-5.jpg";
 import NewDatisAllImage from "@/assets/images/new-datis-all-new.jpg";
 import MedicineSeven from "@/assets/images/medicine-7.jpg";
 
@@ -217,6 +230,12 @@ export const medicineProducts: CatalogProduct[] = [
     type: "medicine",
     name: "Calcium nitrate + Amino acid",
     image: VitalPlusCalcium,
+    images: [
+      VitalPlusCalcium,
+      VitalPlusCalciumSlideOne,
+      VitalPlusCalciumSlideTwo,
+      VitalPlusCalciumSlideThree,
+    ],
     summary:
       "Yuqori sifatli suyuq o'g'it, o'simliklarda kalsiy tanqisligini bartaraf etish va hosil sifatini yaxshilash uchun qo'llaniladi.",
     description:
@@ -391,6 +410,7 @@ export const medicineProducts: CatalogProduct[] = [
     type: "medicine",
     name: "Datis Rich Fertilizer Calcium 40% SC",
     image: BacteriaCalcium40,
+    images: [BacteriaCalcium40, BacteriaCalciumSlideOne],
     summary:
       "Suspenzion shakldagi suyuq o'g'it bo'lib, yuqori so'rilish va mahsulotga tez kirib borishni ta'minlaydi.",
     description:
@@ -505,6 +525,13 @@ export const medicineProducts: CatalogProduct[] = [
     type: "medicine",
     name: "Roll Trap",
     image: HomeTraps,
+    images: [
+      HomeTraps,
+      RollTrapSlideOne,
+      RollTrapSlideTwo,
+      RollTrapSlideThree,
+      RollTrapSlideFour,
+    ],
     summary:
       "Issiqxona, dala va omborlarda uchuvchi hasharotlarni samarali tutish uchun mo'ljallangan yopishqoq lenta.",
     description:
@@ -539,6 +566,14 @@ export const medicineProducts: CatalogProduct[] = [
     type: "medicine",
     name: "Yopishqoq tuzoq plastina",
     image: TrapBoard,
+    images: [
+      TrapBoard,
+      TrapBoardSlideOne,
+      TrapBoardSlideTwo,
+      TrapBoardSlideThree,
+      TrapBoardSlideFour,
+      TrapBoardSlideFive,
+    ],
     summary:
       "Issiqxona, bog', dala va omborlarda uchuvchi zararkunandalarni aniqlash va tutish uchun ishlatiladigan yopishqoq plastina.",
     description:

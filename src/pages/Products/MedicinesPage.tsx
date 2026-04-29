@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/navbar";
 import { medicineProducts } from "@/data/catalog";
 import HomeSectionsBg from "@/assets/images/home-sections-bg.jpg";
 import { ArrowLeft } from "lucide-react";
-import { useEffect, useState } from "react";
+import { type MouseEvent, type PointerEvent, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const MedicinesPage = () => {
@@ -102,41 +102,94 @@ const CatalogCard = ({
 }: FlipCatalogCardProps) => {
   const slides = images?.length ? images : [image];
   const [activeSlide, setActiveSlide] = useState(0);
+  const dragStartX = useRef<number | null>(null);
+  const shouldBlockClick = useRef(false);
 
-  useEffect(() => {
+  const showPreviousSlide = () => {
+    setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
+  };
+
+  const showNextSlide = () => {
+    setActiveSlide((current) => (current + 1) % slides.length);
+  };
+
+  const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (slides.length < 2) {
       return;
     }
 
-    const intervalId = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-    }, 3000);
+    dragStartX.current = event.clientX;
+    shouldBlockClick.current = false;
+  };
 
-    return () => window.clearInterval(intervalId);
-  }, [slides.length]);
+  const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) {
+      return;
+    }
+
+    const swipeDistance = event.clientX - dragStartX.current;
+    dragStartX.current = null;
+
+    if (Math.abs(swipeDistance) < 40) {
+      return;
+    }
+
+    shouldBlockClick.current = true;
+
+    if (swipeDistance < 0) {
+      showNextSlide();
+    } else {
+      showPreviousSlide();
+    }
+  };
+
+  const handlePointerCancel = () => {
+    dragStartX.current = null;
+  };
+
+  const handleCardClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!shouldBlockClick.current) {
+      return;
+    }
+
+    event.preventDefault();
+    shouldBlockClick.current = false;
+  };
 
   return (
     <div className="group mx-auto w-full max-w-[320px] text-center sm:max-w-[260px]">
       <div className="transition duration-500 group-hover:-translate-y-2">
-        <Link
-          to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
-          className="relative block h-[250px] overflow-hidden rounded-[14px] border-4 border-[#FBC719] bg-[#123d21] shadow-[0_18px_42px_rgba(0,0,0,0.32)] outline-none sm:h-[268px]"
+        <div
+          className="relative h-[250px] touch-pan-y cursor-grab overflow-hidden rounded-[14px] border-4 border-[#FBC719] bg-[#123d21] shadow-[0_18px_42px_rgba(0,0,0,0.32)] active:cursor-grabbing sm:h-[268px]"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
         >
-          {slides.map((slide, index) => (
-            <img
-              key={slide}
-              src={slide}
-              alt={name}
-              className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${
-                index === activeSlide ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
+          <Link
+            to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
+            className="absolute inset-0 block outline-none"
+            onClick={handleCardClick}
+          >
+            {slides.map((slide, index) => (
+              <img
+                key={slide}
+                src={slide}
+                alt={name}
+                draggable={false}
+                className={`absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${
+                  index === activeSlide ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </Link>
           {slides.length > 1 ? (
-            <span className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
               {slides.map((slide, index) => (
-                <span
+                <button
                   key={slide}
+                  type="button"
+                  aria-label={`${name} rasm ${index + 1}`}
+                  onClick={() => setActiveSlide(index)}
                   className={`h-2 rounded-full transition ${
                     index === activeSlide
                       ? "w-5 bg-[#FBC719]"
@@ -144,9 +197,9 @@ const CatalogCard = ({
                   }`}
                 />
               ))}
-            </span>
+            </div>
           ) : null}
-        </Link>
+        </div>
         <h2 className="mx-auto mt-4 w-fit max-w-full rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
           {name}
         </h2>

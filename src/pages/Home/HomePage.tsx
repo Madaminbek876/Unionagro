@@ -420,6 +420,7 @@ type CategoryCardProps = {
   image: string;
   title: string;
 };
+
 const CategoryCard = ({ href, image, title }: CategoryCardProps) => (
   <a href={href} className="group block">
     <div className="overflow-hidden rounded-[28px] border-3 border-yellow-400 bg-white shadow-[0_18px_45px_rgba(0,0,0,0.18)]">

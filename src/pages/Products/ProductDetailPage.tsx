@@ -12,7 +12,7 @@ import {
   Sprout,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { type PointerEvent, useEffect, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
 const ProductDetailPage = () => {
@@ -26,22 +26,53 @@ const ProductDetailPage = () => {
     : product
       ? [product.image]
       : [];
+  const dragStartX = useRef<number | null>(null);
 
   useEffect(() => {
     setActiveProductSlide(0);
   }, [product?.slug]);
 
-  useEffect(() => {
+  const showPreviousProductSlide = () => {
+    setActiveProductSlide(
+      (current) => (current - 1 + productSlides.length) % productSlides.length,
+    );
+  };
+
+  const showNextProductSlide = () => {
+    setActiveProductSlide((current) => (current + 1) % productSlides.length);
+  };
+
+  const handleProductPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (productSlides.length < 2) {
       return;
     }
 
-    const intervalId = window.setInterval(() => {
-      setActiveProductSlide((current) => (current + 1) % productSlides.length);
-    }, 3000);
+    dragStartX.current = event.clientX;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
 
-    return () => window.clearInterval(intervalId);
-  }, [productSlides.length]);
+  const handleProductPointerUp = (event: PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) {
+      return;
+    }
+
+    const swipeDistance = event.clientX - dragStartX.current;
+    dragStartX.current = null;
+
+    if (Math.abs(swipeDistance) < 40) {
+      return;
+    }
+
+    if (swipeDistance < 0) {
+      showNextProductSlide();
+    } else {
+      showPreviousProductSlide();
+    }
+  };
+
+  const handleProductPointerCancel = () => {
+    dragStartX.current = null;
+  };
 
   if (!product) {
     return (
@@ -170,12 +201,18 @@ const ProductDetailPage = () => {
             <div className="relative">
               <div className="absolute -right-3 -top-4 h-24 w-24 rounded-full border border-[#FBC719]/40 bg-[#FBC719]/18 blur-2xl sm:-right-6 sm:-top-6 sm:h-36 sm:w-36" />
               <div className="relative overflow-hidden rounded-[22px] border-4 border-[#FBC719] bg-[#123d21] shadow-[0_34px_90px_rgba(0,0,0,0.36)] sm:rounded-[28px]">
-                <div className="relative aspect-[1.05/1] overflow-hidden bg-[#123d21] sm:aspect-[1.12/1]">
+                <div
+                  className="relative aspect-[1.05/1] touch-pan-y cursor-grab overflow-hidden bg-[#123d21] active:cursor-grabbing sm:aspect-[1.12/1]"
+                  onPointerDown={handleProductPointerDown}
+                  onPointerUp={handleProductPointerUp}
+                  onPointerCancel={handleProductPointerCancel}
+                >
                   {productSlides.map((slide, index) => (
                     <img
                       key={slide}
                       src={slide}
                       alt={product.name}
+                      draggable={false}
                       className={`absolute inset-0 h-full w-full object-cover transition duration-700 ${
                         index === activeProductSlide
                           ? "scale-100 opacity-100"

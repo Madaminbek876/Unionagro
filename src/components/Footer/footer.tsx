@@ -23,7 +23,7 @@ const contacts = [
     label: "Manzil",
     value: "Xasanboy lag'moni, Hasanboy 2/2",
   },
-  { icon: Phone, label: "Telefon", value: "+998 99 300 67 65" },
+  { icon: Phone, label: "Telefon", value: "+998 99 300 67 65\n+998 99 882 00 12" },
   {
     icon: Globe2,
     label: "Sayt",
@@ -113,7 +113,7 @@ const Footer = () => {
                         {item.value}
                       </a>
                     ) : (
-                      <span className="break-words text-base font-black sm:text-lg">
+                      <span className="whitespace-pre-line break-words text-base font-black sm:text-lg">
                         {item.value}
                       </span>
                     )}
