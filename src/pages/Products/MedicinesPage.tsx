@@ -12,14 +12,12 @@ const MedicinesPage = () => {
   const isTrapsCategory = category === "traps";
   const defaultMedicineProducts = medicineProducts.filter(
     (medicine) =>
-      !["trap-roll", "trap-board", "medicine-6", "medicine-7", "proton-v367", "bacteria-calcium-40"].includes(
+      !["trap-roll", "trap-board", "medicine-6", "proton-v367"].includes(
         medicine.slug,
       ),
   );
   const orderedBacteriaSlugs = [
-    "bacteria-calcium-40",
     "medicine-6",
-    "medicine-7",
     "proton-v367",
   ];
   const productsToShow = isBacteriaCategory
