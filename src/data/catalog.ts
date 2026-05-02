@@ -73,6 +73,10 @@ export type CatalogProduct = {
   summary: string;
   description: string;
   highlights: string[];
+  diseaseResistance?: {
+    title: string;
+    items: string[];
+  };
   specs: {
     label: string;
     value: string;
@@ -97,18 +101,23 @@ export const seedProducts: CatalogProduct[] = [
       LabelaF1CloseField,
     ],
     summary:
-      "Erta pishar tarvuz navi. Yirik meva, kuchli ildiz va yaxshi tashishga chidamlilik bilan ajralib turadi.",
+      "Ertapishar tarvuz duragayi. Og'irligi 10-13 kg, eti to'q qizil, mazasi juda shirin va qarsildoq.",
     description:
-      "Labela F1 ochiq maydon uchun tanlanadigan barqaror tarvuz urug'i. Mevasi bir xil shakllanadi, po'sti mustahkam va uzoq masofaga tashishga mos.",
+      "Labela F1 super ertapishar tarvuz duragayi bo'lib, ko'chat ekilgandan so'ng 60-65 kunda pishadi. Mevasi 10-13 kg, eti to'q qizil rangda, mazasi juda shirin va qarsildoq. Generativ tipdagi o'simlik, palagi va bargi o'rtacha kattalikda.",
     highlights: [
-      "Yirik va bozorbop meva",
-      "Kuchli ildiz tizimi",
-      "Issiq mavsumda barqaror rivojlanish",
+      "Super ertapishar",
+      "Mevasi 10-13 kg",
+      "Eti to'q qizil rangda",
+      "Mazasi juda shirin va qarsildoq",
+      "Palagi va bargi o'rtacha kattalikda",
     ],
     specs: [
       { label: "Yo'nalish", value: "Tarvuz" },
-      { label: "Pishish turi", value: "Erta" },
+      { label: "Pishish turi", value: "Super ertapishar" },
       { label: "Ekish joyi", value: "Ochiq maydon" },
+      { label: "Pishish muddati", value: "60-65 kun" },
+      { label: "Meva vazni", value: "10-13 kg" },
+      { label: "O'simlik tipi", value: "Generativ" },
     ],
   },
   {
@@ -124,17 +133,26 @@ export const seedProducts: CatalogProduct[] = [
       CherryTT10LongChain,
     ],
     summary:
-      "Issiqxona uchun serhosil cherry pomidor. Bir tekis shoda, yorqin rang va bozorbop ko'rinish beradi.",
+      "Ertapishar cherry pomidor duragayi. Mevasi mazali, shakar miqdori yuqori va uzoq masofalarga tashishga yaroqli.",
     description:
-      "Cherry TT-10 F1 issiqxona sharoitida barqaror hosil berishga mos. Shodalari tartibli, mevalari mayda, yorqin va savdo uchun chiroyli ko'rinadi.",
+      "Cherry TT-10 F1 ertapishar cherry pomidor duragayi. Kuchli poyali, muvozanatli va bo'g'in oralari kalta bo'lgan o'simlik. Mevasi mazali, shakar miqdori yuqori, dumaloq, qattiq, yaltiroq to'q qizil rangda. Shodasi o'rta va katta uzunlikda, mevalar shodada bir tekis bo'lib pishadi. Mevaning shakli va hajmi bir xil, uzoq masofalarga tashishga yaroqli.",
     highlights: [
-      "Bir tekis shoda hosil qiladi",
-      "Yorqin rang va zich meva",
-      "Doimiy yig'im uchun qulay",
+      "Shodasi o'rta va katta uzunlikda",
+      "Mevaning shakli va hajmi bir xil",
+      "Uzoq masofalarga tashishga yaroqli",
+      "Kasalliklarga yaxshi chidamli",
+      "Shakar miqdori yuqori va mazali meva",
     ],
+    diseaseResistance: {
+      title: "Kasalliklarga yaxshi chidamli",
+      items: [
+        "V HR: Va:0; Vd:0 / Fol:0,1 / ToMV:0,1,2 / Pf:A,B,C,D,E",
+        "V IR: TYLCV / Ma Mi Mj / Ss",
+      ],
+    },
     specs: [
       { label: "Yo'nalish", value: "Cherry pomidor" },
-      { label: "Pishish turi", value: "O'rtacha erta" },
+      { label: "Pishish turi", value: "Ertapishar" },
       { label: "Ekish joyi", value: "Issiqxona" },
     ],
   },
@@ -152,18 +170,28 @@ export const seedProducts: CatalogProduct[] = [
       AishaF1RipeCluster,
     ],
     summary:
-      "Pomidor navi kuchli o'sadi, kasallikka chidamliligi yaxshi va uzoq hosil davriga mos.",
+      "Ertapishar pomidor duragayi. Kuchli poyali, muvozanatli o'simlik bo'lib, mazali va yirik meva beradi.",
     description:
-      "Aisha F1 kuchli vegetativ o'sishi va meva bog'lash barqarorligi bilan ajralib turadi. Issiqxona hamda parvarishi kuchli maydonlarda uzoq hosil olish uchun mos.",
+      "Aisha F1 ertapishar pomidor duragayi. Kuchli poyali, muvozanatli va bo'g'in oralari kalta bo'lgan o'simlik. Mevasi mazali, qattiq, yaltiroq to'q qizil rangda. Shodasi o'rta va katta uzunlikda, mevalar shodada bir tekis bo'lib pishadi. Mevaning shakli va hajmi bir xil, uzoq masofalarga tashishga yaroqli.",
     highlights: [
-      "Kuchli o'sish energiyasi",
-      "Uzoq hosil davriga mos",
-      "Bozorbop meva shakli",
+      "Kuchli poyali va muvozanatli o'simlik",
+      "Bo'g'in oralari kalta",
+      "Mevasi qattiq, yaltiroq to'q qizil rangda",
+      "Mevaning shakli va hajmi bir xil",
+      "Uzoq masofalarga tashishga yaroqli",
     ],
+    diseaseResistance: {
+      title: "Kasalliklarga yaxshi chidamli",
+      items: [
+        "V HR: Va:0; Vd:0 / Fol:0,1 / ToMV:0,1,2 / Pf:A,B,C,D,E",
+        "V IR: TYLCV / Ma Mi Mj / Ss, ToBRFV",
+      ],
+    },
     specs: [
       { label: "Yo'nalish", value: "Pomidor" },
-      { label: "Pishish turi", value: "O'rtacha" },
+      { label: "Pishish turi", value: "Ertapishar" },
       { label: "Ekish joyi", value: "Issiqxona" },
+      { label: "Meva vazni", value: "200-220 gr" },
     ],
   },
   {
@@ -180,18 +208,32 @@ export const seedProducts: CatalogProduct[] = [
       LaserF1PackedBags,
     ],
     summary:
-      "Bodring urug'i issiqxona va ochiq maydon uchun mos. Mevasi silliq, hosildorligi barqaror.",
+      "Erta bahor, yoz va erta kuz mavsumlari uchun tavsiya qilinadigan bodring duragayi. Mevasi 9-10 sm, ta'mi a'lo va mazali.",
     description:
-      "Laser F1 bodring urug'i bir tekis meva shakli va yaxshi hosildorligi uchun tanlanadi. Parvarish to'g'ri bo'lsa, mavsum davomida sifatli mahsulot beradi.",
+      "Laser F1 bodring duragayi erta bahor, yoz va erta kuz mavsumlari uchun tavsiya qilinadi. Meva uzunligi 9-10 sm, rangi och yashildan ko'ra yaltiroq, uzoq saqlanuvchan. Meva tugishi a'lo va tez, bo'g'in oralig'i qisqa bo'lib, bir bo'g'inda 3-4 ta meva tugadi. Palagi kuchli o'suvchi va baquvvat, sovuq ob-havo sharoitida ham yaxshi meva tugadi, stressga chidamli.",
     highlights: [
-      "Silliq va bir xil meva",
-      "Hosildorligi barqaror",
-      "Issiqxona va ochiq maydonga mos",
+      "Meva uzunligi 9-10 sm",
+      "Ta'mi a'lo va mazali",
+      "Uzoq saqlanuvchan",
+      "Bir bo'g'inda 3-4 ta meva tugadi",
+      "Sovuq ob-havoda ham yaxshi meva tugadi",
+      "Stressga chidamli",
+      "Ildiz tizimi kuchli va katta",
+      "Yon novdalari yaxshi rivojlangan",
     ],
+    diseaseResistance: {
+      title: "Kasalliklarga chidamliligi",
+      items: [
+        "Yuqori chidamli - CMV, CYV va ZYMV",
+        "O'rta chidamli - DM va PM",
+      ],
+    },
     specs: [
       { label: "Yo'nalish", value: "Bodring" },
       { label: "Pishish turi", value: "Erta" },
-      { label: "Ekish joyi", value: "Universal" },
+      { label: "Mavsum", value: "Erta bahor, yoz, erta kuz" },
+      { label: "Meva uzunligi", value: "9-10 sm" },
+      { label: "Ekish zichligi", value: "18000-20000 ko'chat/ga" },
     ],
   },
   {
@@ -208,18 +250,32 @@ export const seedProducts: CatalogProduct[] = [
       ZumraF1HarvestField,
     ],
     summary:
-      "Qovun urug'i shirin ta'm, zich et va bir xil meva shakli uchun tanlanadi.",
+      "Erta pishar ananas turidagi qovun. 60-65 kunda pishadi, mevasi 2-4 kg, shakar va lazzat nisbati yuqori.",
     description:
-      "Zumra F1 qovun urug'i shirin ta'mi, zich eti va ko'rkam meva shakli bilan ajralib turadi. Bozor uchun chiroyli va mazali hosil olishga yordam beradi.",
+      "Zumra F1 60-65 kunda pishadigan ananas turidagi qovun duragayi. Mevasi 2-4 kg, go'shti och sariq rangda, shakar va lazzat nisbati yuqori. Meva po'stlog'i mukammal tinli, tasvirlari to'q sariq, saqlash muddati 7-10 kun.",
     highlights: [
-      "Shirin ta'm va xushbo'y hid",
-      "Zich etli meva",
-      "Bir xil meva shakli",
+      "Shakar va lazzat nisbati yuqori",
+      "Meva go'shti och sariq rangda",
+      "Meva po'stlog'i mukammal tinli",
+      "Tasvirlari to'q sariq",
+      "Saqlash muddati 7-10 kun",
     ],
+    diseaseResistance: {
+      title: "Kasalliklarga chidamliligi",
+      items: [
+        "Yuqori chidamli - CMV, CYV va ZYMV",
+        "O'rta chidamli - DM va PM",
+        "Kasalliklarga qarshilik: Fusarium 0,1",
+      ],
+    },
     specs: [
       { label: "Yo'nalish", value: "Qovun" },
-      { label: "Pishish turi", value: "O'rtacha" },
+      { label: "Pishish turi", value: "Erta pishar" },
       { label: "Ekish joyi", value: "Ochiq maydon" },
+      { label: "Pishish muddati", value: "60-65 kun" },
+      { label: "Turi", value: "Ananas" },
+      { label: "Meva vazni", value: "2-4 kg" },
+      { label: "Refraktometr qiymati", value: "14-16" },
     ],
   },
 ];

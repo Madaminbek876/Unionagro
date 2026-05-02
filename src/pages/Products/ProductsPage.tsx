@@ -166,9 +166,12 @@ const CatalogCard = ({
             </div>
           ) : null}
         </div>
-        <h2 className="mx-auto mt-4 w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
+        <Link
+          to={`/product/${slug}`}
+          className="mx-auto mt-4 block w-fit rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]"
+        >
           {name}
-        </h2>
+        </Link>
       </div>
     </div>
   );

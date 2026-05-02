@@ -33,7 +33,7 @@ const MedicinesPage = () => {
     ? "Jonli bakteriyalar"
     : isTrapsCategory
       ? "Tuzoqlar"
-      : "Dorilar";
+      : "Ozuqalar";
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#07b800] text-white">
@@ -198,9 +198,12 @@ const CatalogCard = ({
             </div>
           ) : null}
         </div>
-        <h2 className="mx-auto mt-4 w-fit max-w-full rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-lg font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931]">
+        <Link
+          to={`/medicine/${slug}${category ? `?category=${category}` : ""}`}
+          className="mx-auto mt-4 block w-max whitespace-nowrap rounded-full border border-[#FBC719] bg-[#FBC719]/10 px-5 py-2 text-base font-black text-[#FBC719] drop-shadow transition group-hover:bg-[#FBC719] group-hover:text-[#196931] sm:text-lg"
+        >
           {name}
-        </h2>
+        </Link>
       </div>
     </div>
   );

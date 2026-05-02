@@ -9,6 +9,7 @@ import {
   PackageCheck,
   PhoneCall,
   Send,
+  ShieldCheck,
   Sprout,
   X,
 } from "lucide-react";
@@ -130,7 +131,7 @@ const ProductDetailPage = () => {
         ? "Jonli bakteriyalar"
         : isTrapsCategory
           ? "Tuzoqlar"
-          : "Dorilar";
+          : "Ozuqalar";
   const SectionIcon =
     product.type === "seed"
       ? Sprout
@@ -173,7 +174,7 @@ const ProductDetailPage = () => {
                 {sectionTitle} bo'limi
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-black leading-tight text-white sm:text-6xl">
+              <h1 className="max-w-full whitespace-nowrap text-[clamp(1.85rem,3.7vw,3rem)] font-black leading-tight text-white">
                 {product.name}
               </h1>
 
@@ -275,6 +276,33 @@ const ProductDetailPage = () => {
               ))}
             </div>
           </div>
+
+          {product.diseaseResistance ? (
+            <div className="mt-8 overflow-hidden rounded-[22px] border border-[#FBC719]/34 bg-[#0b2a16]/72 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur-xl sm:mt-10 sm:rounded-[24px] sm:p-6">
+              <div className="mb-4 flex items-center gap-3">
+                <ShieldCheck
+                  className="shrink-0 text-[#FBC719]"
+                  size={26}
+                  strokeWidth={2.6}
+                />
+                <h2 className="text-xl font-black text-white sm:text-2xl">
+                  {product.diseaseResistance.title}
+                </h2>
+              </div>
+              <div className="grid gap-3 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+                {product.diseaseResistance.items.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[18px] border border-white/12 bg-white/[0.08] p-4"
+                  >
+                    <p className="break-words text-sm font-black leading-7 text-white sm:text-base">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
 
           {product.mediaSections?.length ? (
             <div className="mt-8 space-y-6 sm:mt-10 sm:space-y-8">
