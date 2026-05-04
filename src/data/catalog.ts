@@ -15,10 +15,8 @@ import AishaF1GreenCluster from "@/assets/images/aisha-f1-green-cluster.jpg";
 import AishaF1HeavyCluster from "@/assets/images/aisha-f1-heavy-cluster.jpg";
 import AishaF1RipeCluster from "@/assets/images/aisha-f1-ripe-cluster.jpg";
 import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
-import LaserF1HarvestBox from "@/assets/images/laser-f1-harvest-box.jpg";
 import LaserF1Lineup from "@/assets/images/laser-f1-lineup.jpeg";
 import LaserF1Crates from "@/assets/images/laser-f1-crates.jpg";
-import LaserF1BagsClose from "@/assets/images/laser-f1-bags-close.jpg";
 import LaserF1PackedBags from "@/assets/images/laser-f1-packed-bags.jpg";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
 import ZumraF1FieldStack from "@/assets/images/zumra-f1-field-stack.jpg";
@@ -201,10 +199,8 @@ export const seedProducts: CatalogProduct[] = [
     image: LaserF1Cucumber,
     images: [
       LaserF1Cucumber,
-      LaserF1HarvestBox,
       LaserF1Lineup,
       LaserF1Crates,
-      LaserF1BagsClose,
       LaserF1PackedBags,
     ],
     summary:

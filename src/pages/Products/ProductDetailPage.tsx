@@ -238,18 +238,18 @@ const ProductDetailPage = () => {
                     />
                   ))}
                   {productSlides.length > 1 ? (
-                    <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full border border-white/18 bg-[#415238]/88 p-2 text-white shadow-[0_18px_42px_rgba(0,0,0,0.28)] backdrop-blur-2xl sm:bottom-4 sm:left-5 sm:right-5 sm:translate-x-0 sm:justify-between sm:gap-3 sm:rounded-[22px] sm:px-5 sm:py-4">
-                      <div className="hidden items-center gap-2 sm:flex">
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-4 rounded-[18px] border border-white/18 bg-[#415238]/88 px-3 py-2.5 text-white shadow-[0_18px_42px_rgba(0,0,0,0.28)] backdrop-blur-2xl sm:bottom-4 sm:left-5 sm:right-5 sm:gap-3 sm:rounded-[22px] sm:px-5 sm:py-4">
+                      <div className="flex min-w-0 items-center gap-1 sm:gap-2">
                         {productSlides.map((slide, index) => (
                           <button
                             key={slide}
                             type="button"
                             aria-label={`${product.name} rasm ${index + 1}`}
                             onClick={() => setActiveProductSlide(index)}
-                            className={`h-3 rounded-full border border-white/30 transition ${
+                            className={`h-2 shrink-0 rounded-full border border-white/30 transition sm:h-3 ${
                               index === activeProductSlide
-                                ? "w-8 bg-[#FBC719]"
-                                : "w-3 bg-white/70"
+                                ? "w-6 bg-[#FBC719] sm:w-8"
+                                : "w-2 bg-white/70 sm:w-3"
                             }`}
                           />
                         ))}
@@ -262,9 +262,9 @@ const ProductDetailPage = () => {
                           onPointerDown={(event) => event.stopPropagation()}
                           onPointerUp={(event) => event.stopPropagation()}
                           onClick={(event) => event.stopPropagation()}
-                          className="inline-flex min-h-9 max-w-[9.5rem] items-center justify-center gap-1.5 overflow-hidden rounded-full bg-[#FBC719] px-3 py-2 text-xs font-black text-[#172c1d] shadow-[0_14px_34px_rgba(0,0,0,0.28)] transition hover:bg-white sm:min-h-11 sm:max-w-none sm:gap-2 sm:px-5 sm:text-sm"
+                          className="inline-flex min-h-8 max-w-[8.6rem] items-center justify-center gap-1 overflow-hidden rounded-full bg-[#FBC719] px-2.5 py-1.5 text-[11px] font-black text-[#172c1d] shadow-[0_14px_34px_rgba(0,0,0,0.28)] transition hover:bg-white sm:min-h-11 sm:max-w-none sm:gap-2 sm:px-5 sm:text-sm"
                         >
-                          <Send className="shrink-0" size={16} />
+                          <Send className="shrink-0" size={15} />
                           <span className="truncate">Batafsil ma'lumot</span>
                         </a>
                       </div>
