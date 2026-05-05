@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer";
 import HomeBacteria from "@/assets/images/home-bacteria.jpg";
 import HomeNutrition from "@/assets/images/home-nutrition.jpg";
-import SeedsMix from "@/assets/images/urug.png";
+import SeedsMix from "@/assets/images/uruglar.png";
 import HomeTraps from "@/assets/images/home-traps.jpg";
 import FieldCarouselOne from "@/assets/images/watermelon-field-man.jpg";
 import FieldCarouselTwo from "@/assets/images/field-carousel-2.jpg";
