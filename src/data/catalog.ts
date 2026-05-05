@@ -18,6 +18,8 @@ import LaserF1Cucumber from "@/assets/images/laser-f1-cucumber.jpg";
 import LaserF1Lineup from "@/assets/images/laser-f1-lineup.jpeg";
 import LaserF1Crates from "@/assets/images/laser-f1-crates.jpg";
 import LaserF1PackedBags from "@/assets/images/laser-f1-packed-bags.jpg";
+import LaserF1GreenhouseOne from "@/assets/images/laser-f1-greenhouse-1.png";
+import LaserF1GreenhouseTwo from "@/assets/images/laser-f1-greenhouse-2.png";
 import ZumraF1Melon from "@/assets/images/zumra-f1-melon.jpg";
 import ZumraF1FieldStack from "@/assets/images/zumra-f1-field-stack.jpg";
 import ZumraF1Sliced from "@/assets/images/zumra-f1-sliced.jpg";
@@ -202,6 +204,8 @@ export const seedProducts: CatalogProduct[] = [
       LaserF1Lineup,
       LaserF1Crates,
       LaserF1PackedBags,
+      LaserF1GreenhouseOne,
+      LaserF1GreenhouseTwo,
     ],
     summary:
       "Erta bahor, yoz va erta kuz mavsumlari uchun tavsiya qilinadigan bodring duragayi. Mevasi 9-10 sm, ta'mi a'lo va mazali.",
